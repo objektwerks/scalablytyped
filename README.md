@@ -5,11 +5,7 @@ ScalablyTyped
 Install
 -------
 1. brew install node
->See **package.json**.
-
-Vite
-----
-1. npm install
+2. npm install
 >See **package.json**.
 
 Build
