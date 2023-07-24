@@ -8,6 +8,7 @@ import scala.scalajs.js
 import scala.scalajs.js.JSConverters.*
 
 import typings.chartJs.mod.*
+import typings.chartJs.anon.ChartType
 import typings.chartJs.distTypesIndexMod.{ChartConfiguration, ChartData, ChartDataset}
 
 object App:
@@ -18,9 +19,10 @@ object App:
 
   def build(document: HTMLDocument): Unit =
     // import warning: importer.ImportType#apply Failed type conversion: chart.js.anon.keyinChartTypetypekeyChar[TType]
-    val chartDataset = new ChartDataset()
+    val chartType = new ChartType { `type` = "line"}
+    val chartDataset = new ChartDataset(`type` = chartType, data = js.Array(1, 2, 3))
 
-    val chartDatasets = js.Array(chartDataset)
+    val chartDatasets = js.Array[ChartDataset](chartDataset)
     
     val chartData = new ChartData {
       datasets = chartDatasets
