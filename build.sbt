@@ -4,6 +4,9 @@ lazy val scalablytyped = project
   .enablePlugins(ScalablyTypedConverterExternalNpmPlugin)
   .settings(
     scalaVersion := "3.3.1-RC4",
+    scalacOptions ++= Seq(
+      "-Wunused:all"
+    ),
     libraryDependencies ++= Seq(
       "org.scala-js" %%% "scalajs-dom" % "2.6.0",
     ),
