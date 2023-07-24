@@ -8,6 +8,8 @@ import scala.scalajs.js
 import scala.scalajs.js.JSConverters.*
 
 import typings.chartJs.mod.*
+import typings.chartJs.anon.ChartOptions
+import typings.chartJs.distTypesIndexMod.{ChartConfiguration, ChartData, ChartType}
 
 object App:
   def main(args: Array[String]): Unit =
@@ -25,7 +27,7 @@ object App:
     canvas.id = "chart"
     document.body.appendChild(canvas)
     ()
-/*
+
   def buildChart(canvas: Element): Element =
     val chartDataSets = js.Array(
       new ChartDataSets {
@@ -48,4 +50,3 @@ object App:
     }
 
     new Chart(canvas, chartConfig)
-    */
