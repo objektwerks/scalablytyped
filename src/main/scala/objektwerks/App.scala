@@ -28,6 +28,7 @@ object App:
     )
     
     val chartData = new ChartData {
+      datasets = chartDataSets
     }
 
     val chartOptions = new ChartOptions {
