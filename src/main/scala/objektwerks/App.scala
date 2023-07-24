@@ -18,13 +18,7 @@ object App:
       build(document)
     })
 
-  def build(document: HTMLDocument): Unit =
-    val canvas = document.createElement("canvas").asInstanceOf[HTMLCanvasElement]
-    canvas.id = "chart"
-    document.body.appendChild(canvas)
-    ()
-
-  def buildChart(canvas: Element): Element =
+  def build(document: HTMLDocument): Unit =  
     val chartDataSets = js.Array(
       new ChartDataSets {
         label = "Data"
@@ -45,4 +39,7 @@ object App:
       options = chartOptions
     }
 
+    val canvas = document.getElementById("chart").asInstanceOf[HTMLCanvasElement]
     new Chart(canvas, chartConfig)
+
+    ()
