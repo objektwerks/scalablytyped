@@ -1,6 +1,6 @@
-Scalajs.Vite
-------------
->ScalaJs-Vite feature tests using Scala 3.
+ScalablyTyped
+-------------
+>ScalaJs using ScalablyTyped, Chartjs and Scala 3.
 
 Install
 -------
