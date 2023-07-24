@@ -2,8 +2,13 @@ package objektwerks
 
 import org.scalajs.dom
 import org.scalajs.dom.document
-import org.scalajs.dom.HTMLDocument
-import typings.std.stdStrings.canvas
+import org.scalajs.dom.{Element, HTMLDocument}
+
+import scala.scalajs.js
+import scala.scalajs.js.JSConverters.*
+
+import typings.chartJs.mod.*
+//import typings.chartJs.distTypesIndexMod.*
 
 object App:
   def main(args: Array[String]): Unit =
@@ -21,3 +26,26 @@ object App:
     canvas.id = "chart"
     document.body.appendChild(canvas)
     ()
+
+  def buildChart(canvas: Element): Element =
+    val chartDataSets = js.Array(
+      new ChartDataSets {
+        label = "Data"
+        borderWidth = 1
+        backgroundColor = "navy"
+      }
+    )
+    
+    val chartData = new ChartData {
+    }
+
+    val chartOptions = new ChartOptions {
+    }
+
+    val chartConfig = new ChartConfiguration {
+      `type` = ChartType.line
+      date = chartData
+      options = chartOptions
+    }
+
+    Chart(canvas, chartConfig)
