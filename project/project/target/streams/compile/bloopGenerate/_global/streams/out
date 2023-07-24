@@ -1,0 +1,4 @@
+[debug] [scalajs-vite-build-build] Classpath dependencies List()
+[debug] [scalajs-vite-build-build] Dependencies from configurations List()
+[debug] Bloop wrote the configuration of project 'scalajs-vite-build-build' to '/Users/tripletail/workspace/scalajs.vite/project/project/.bloop/scalajs-vite-build-build.json'
+[success] Generated .bloop/scalajs-vite-build-build.json

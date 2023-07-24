@@ -1,0 +1,5 @@
+[warn] ENSIME not found. Try
+[warn] 
+[warn]       sbt ++2.12.18! install
+[warn] 
+[warn] in the ensime-tng repo.
