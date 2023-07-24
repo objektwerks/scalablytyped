@@ -8,7 +8,6 @@ import scala.scalajs.js
 import scala.scalajs.js.JSConverters.*
 
 import typings.chartJs.mod.*
-//import typings.chartJs.distTypesIndexMod.*
 
 object App:
   def main(args: Array[String]): Unit =
