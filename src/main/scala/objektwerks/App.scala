@@ -20,9 +20,12 @@ object App:
     val chartDataSets = js.Array[ChartDataset](
       // import warning: importer.ImportType#apply Failed type conversion: chart.js.anon.keyinChartTypetypekeyChar[TType]
       new ChartDataset {
-        data = js.Array[Int](1, 2, 3, 4, 5, 6, 7, 8, 9, 10) // Just a guess of what is should be!
+        data = js.Array[Int](1, 2, 3, 4, 5, 6, 7, 8, 9, 10) // Just a guess of what it should be.
       }
     )
+
+    val chartOptions = new ChartOptions {
+    }
     
     val chartData = new ChartData {
       datasets = chartDataSets
@@ -30,6 +33,7 @@ object App:
 
     val chartConfig = new ChartConfiguration {
       data = chartData
+      options = chartOptions
     }
 
     val canvas = document.getElementById("chart").asInstanceOf[CanvasRenderingContext2D]
