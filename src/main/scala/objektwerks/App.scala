@@ -18,10 +18,9 @@ object App:
 
   def build(document: HTMLDocument): Unit =
     // import warning: importer.ImportType#apply Failed type conversion: chart.js.anon.keyinChartTypetypekeyChar[TType]
-    val chartDataset = new ChartDataset {}
+    val chartDataset = new ChartDataset()
 
-    val chartDatasets = js.Array[ChartDataset](chartDataset}
-    )
+    val chartDatasets = js.Array(chartDataset)
     
     val chartData = new ChartData {
       datasets = chartDatasets
