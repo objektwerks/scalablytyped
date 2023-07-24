@@ -2,6 +2,10 @@ ScalablyTyped
 -------------
 >ScalaJs using ScalablyTyped, Chartjs and Scala 3.
 
+Note
+----
+>Current Chartjs (```@types/chart.js": "^2.9.37```) types don't work as advertised. See App for details.
+
 Install
 -------
 1. brew install node
