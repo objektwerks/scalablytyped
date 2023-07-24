@@ -20,7 +20,7 @@ object App:
   def build(document: HTMLDocument): Unit =
     val chartType = new ChartType { `type` = "line" }
     val dataArray = js.Array[Int](1, 2, 3)
-    val chartDatasetProperties = new ChartDataset[ChartType, js.Array[Int]]()
+    val chartDatasetProperties = new ChartDataset()
     chartDatasetProperties.set("type", chartType)
     chartDatasetProperties.set("data", dataArray)
 
