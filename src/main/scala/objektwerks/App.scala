@@ -19,11 +19,6 @@ object App:
     })
 
   def build(document: HTMLDocument): Unit =
-    val paragraph = document.createElement("p")
-    paragraph.id = "pid"
-    paragraph.textContent = "Scalajs-ScalablyTyped-Chartjs web app!"
-    document.body.appendChild(paragraph)
-
     val canvas = document.createElement("canvas").asInstanceOf[HTMLCanvasElement]
     canvas.id = "chart"
     document.body.appendChild(canvas)
