@@ -9,6 +9,7 @@ import scala.scalajs.js.JSConverters.*
 
 import typings.chartJs.mod.*
 import typings.chartJs.anon.ChartOptions
+import typings.chartJs.chartJsStrings.line
 import typings.chartJs.distTypesIndexMod.{ChartConfiguration, ChartData, ChartDataset, ChartType}
 
 object App:
@@ -44,7 +45,7 @@ object App:
     }
 
     val chartConfig = new ChartConfiguration {
-      `type` = ChartType.line
+      `type` = line
       date = chartData
       options = chartOptions
     }
