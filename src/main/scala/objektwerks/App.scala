@@ -25,7 +25,7 @@ object App:
     canvas.id = "chart"
     document.body.appendChild(canvas)
     ()
-
+/*
   def buildChart(canvas: Element): Element =
     val chartDataSets = js.Array(
       new ChartDataSets {
@@ -47,4 +47,5 @@ object App:
       options = chartOptions
     }
 
-    Chart(canvas, chartConfig)
+    new Chart(canvas, chartConfig)
+    */
