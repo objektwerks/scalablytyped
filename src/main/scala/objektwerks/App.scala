@@ -10,7 +10,7 @@ import scala.scalajs.js.JSConverters.*
 import typings.chartJs.mod.*
 import typings.chartJs.anon.ChartOptions
 import typings.chartJs.chartJsStrings.line
-import typings.chartJs.distTypesIndexMod.{ChartConfiguration, ChartData, ChartDataset, ChartType}
+import typings.chartJs.distTypesIndexMod.{ChartConfiguration, ChartData}
 
 object App:
   def main(args: Array[String]): Unit =
@@ -31,7 +31,7 @@ object App:
 
   def buildChart(canvas: Element): Element =
     val chartDataSets = js.Array(
-      new ChartDataSet {
+      new ChartDataSets {
         label = "Data"
         borderWidth = 1
         backgroundColor = "navy"
