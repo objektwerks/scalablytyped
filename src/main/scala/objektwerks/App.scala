@@ -2,14 +2,12 @@ package objektwerks
 
 import org.scalajs.dom
 import org.scalajs.dom.document
-import org.scalajs.dom.{Element, HTMLCanvasElement, HTMLDocument}
+import org.scalajs.dom.{CanvasRenderingContext2D, Element, HTMLDocument}
 
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters.*
 
-import typings.chartJs.mod.*
-import typings.chartJs.anon.ChartOptions
-import typings.chartJs.chartJsStrings.line
+import typings.chartJs.anon.*
 import typings.chartJs.distTypesIndexMod.{ChartConfiguration, ChartData}
 
 object App:
@@ -35,12 +33,14 @@ object App:
     }
 
     val chartConfig = new ChartConfiguration {
-      `type` = line
+      `type` = ChartType.line
       date = chartData
       options = chartOptions
     }
 
-    val canvas = document.getElementById("chart").asInstanceOf[HTMLCanvasElement]
-    new Chart(canvas, chartConfig)
+    val canvas = document.getElementById("chart").asInstanceOf[CanvasRenderingContext2D]
+    val chart = new Chart {
+      ctx = canvas
+    }
 
     ()
