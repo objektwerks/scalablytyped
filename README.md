@@ -18,11 +18,6 @@ Build
 2. sbt clean compile fastLinkJS
 >See **target/public** directory.
 
-Test
-----
-1. sbt clean test fastLinkJS
->See **target/public** directory.
-
 Dev
 ---
 >Edits are reflected in both sessions.
@@ -35,10 +30,6 @@ Package
 1. sbt clean test fullLinkJS
 2. npm run build
 >See **dist** directory.
-
-Console
--------
-1. sbt clean compile fastLinkJS run
 
 Browser
 -------
