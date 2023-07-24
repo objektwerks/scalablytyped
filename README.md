@@ -6,6 +6,8 @@ Note
 ----
 >Current Chartjs (```@types/chart.js": "^2.9.37```) types don't work as advertised. See App for details.
 
+>Of course, this hurdle could be due to developer error. ;)
+
 Install
 -------
 1. brew install node
