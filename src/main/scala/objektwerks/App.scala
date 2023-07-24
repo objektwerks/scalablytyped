@@ -7,7 +7,7 @@ import org.scalajs.dom.{CanvasRenderingContext2D, Element, HTMLDocument}
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters.*
 
-import typings.chartJs.anon.*
+import typings.chartJs.anon.{Chart, ChartOptions}
 import typings.chartJs.distTypesIndexMod.{ChartConfiguration, ChartData, ChartDataset}
 
 object App:
@@ -20,7 +20,7 @@ object App:
     val chartDataSets = js.Array[ChartDataset](
       // import warning: importer.ImportType#apply Failed type conversion: chart.js.anon.keyinChartTypetypekeyChar[TType]
       new ChartDataset {
-        data = js.Array[Int](1, 2, 3, 4, 5, 6, 7, 8, 9, 10) // Just a guess of what it should be.
+        // data = js.Array[Int](1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
       }
     )
 
