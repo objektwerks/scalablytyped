@@ -8,7 +8,7 @@ lazy val scalablytyped = project
       "-Wunused:all"
     ),
     libraryDependencies ++= Seq(
-      "org.scala-js" %%% "scalajs-dom" % "2.6.0",
+      "org.scala-js" %%% "scalajs-dom" % "2.7.0",
     ),
     externalNpm := {
       baseDirectory.value
