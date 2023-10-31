@@ -9,8 +9,7 @@ lazy val scalablytyped = project
     ),
     scalaJSUseMainModuleInitializer := true,
     libraryDependencies ++= Seq(
-      "com.raquo" %%% "laminar" % "16.0.0",
-      "org.scala-js" %%% "scalajs-dom" % "2.8.0",
+      "com.raquo" %%% "laminar" % "16.0.0"
     ),
     externalNpm := baseDirectory.value
   )
