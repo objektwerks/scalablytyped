@@ -1,3 +1,5 @@
+import org.scalajs.linker.interface.ModuleSplitStyle
+
 lazy val scalablytyped = project
   .in(file("."))
   .enablePlugins(ScalaJSPlugin)
@@ -8,6 +10,10 @@ lazy val scalablytyped = project
       "-Wunused:all"
     ),
     scalaJSUseMainModuleInitializer := true,
+    scalaJSLinkerConfig ~= {
+      _.withModuleKind(ModuleKind.ESModule)
+        .withModuleSplitStyle(ModuleSplitStyle.SmallModulesFor(List("objektwerks")))
+    },
     libraryDependencies ++= Seq(
       "com.raquo" %%% "laminar" % "16.0.0"
     ),
