@@ -21,10 +21,8 @@ object App:
   val dataSignal = dataVar.signal
   val allValues = dataSignal.map(_.map(_.value))
 
-  def main(args: Array[String]): Unit = {
-    // Laminar initialization
-    renderOnDomContentLoaded(dom.document.querySelector("#app"), appElement())
-  }
+  def main(args: Array[String]): Unit =
+    renderOnDomContentLoaded(dom.document.querySelector("#chart"), appElement())
 
   def appElement(): HtmlElement = {
     div(
