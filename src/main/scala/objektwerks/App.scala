@@ -91,7 +91,7 @@ object App:
       },
     )
 
-  def renderDataGraph(): HtmlElement = {
+  def renderDataGraph(): HtmlElement =
     import typings.chartJs.mod.*
 
     var optChart: Option[Chart] = None
@@ -138,4 +138,3 @@ object App:
         }
       },
     )
-  }
