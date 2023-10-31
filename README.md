@@ -5,6 +5,8 @@ ScalablyTyped
 Note
 ----
 >The Chart.js chart still fails to render. Sigh. :(
+  
+>Even [ScalaJs-Laminar-ChartJS Github](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example) fails!
 
 Install
 -------
