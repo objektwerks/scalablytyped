@@ -50,7 +50,7 @@ object App:
       ),
     )
 
-  def renderDataItem(id: DataItemID, item: Signal[DataItem]): HtmlElement = {
+  def renderDataItem(id: DataItemID, item: Signal[DataItem]): HtmlElement =
     val labelUpdater = dataVar.updater[String] { (data, newLabel) =>
       data.map(item => if item.id == id then item.copy(label = newLabel) else item)
     }
@@ -64,7 +64,6 @@ object App:
       td(inputForDouble(item.map(_.value), valueUpdater)),
       td(button("🗑️", onClick --> (_ => dataVar.update(data => data.filter(_.id != id))))),
     )
-  }
 
   def inputForString(valueSignal: Signal[String], valueUpdater: Observer[String]): Input = {
     input(
