@@ -8,9 +8,8 @@ lazy val scalablytyped = project
       "-Wunused:all"
     ),
     libraryDependencies ++= Seq(
+      "com.raquo" %%% "laminar" % "16.0.0",
       "org.scala-js" %%% "scalajs-dom" % "2.8.0",
     ),
-    externalNpm := {
-      baseDirectory.value
-    }
+    externalNpm := baseDirectory.value
   )
