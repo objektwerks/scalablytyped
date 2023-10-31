@@ -10,11 +10,12 @@ import org.scalajs.dom
 object App:
   final class DataItemID
 
-  case class DataItem(id: DataItemID, label: String, value: Double)
+  final case class DataItem(id: DataItemID,
+                            label: String,
+                            value: Double)
 
-  object DataItem {
+  object DataItem:
     def apply(): DataItem = DataItem(DataItemID(), "?", Math.random())
-  }
 
   val dataVar = Var[List[DataItem]](List(DataItem(DataItemID(), "one", 1.0)))
   val dataSignal = dataVar.signal
