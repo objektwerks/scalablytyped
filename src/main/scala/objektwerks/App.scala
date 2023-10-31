@@ -1,11 +1,11 @@
 package objektwerks
 
-import scala.scalajs.js
-import scala.scalajs.js.JSConverters.*
-
 import com.raquo.laminar.api.L.*
 
 import org.scalajs.dom
+
+import scala.scalajs.js
+import scala.scalajs.js.JSConverters.*
 
 object App:
   final class DataItemID
