@@ -19,7 +19,7 @@ object App:
   object DataItem:
     def apply(): DataItem = DataItem(DataItemID(), "?", Math.random())
 
-  def main(args: Array[String]): Unit =
+  @main def runApp(): Unit =
     renderOnDomContentLoaded(dom.document.querySelector("#app"), appElement())
 
   val dataVar = Var[List[DataItem]](List(DataItem(DataItemID(), "one", 1.0)))
