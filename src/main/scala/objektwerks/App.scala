@@ -24,9 +24,9 @@ object App:
   def main(args: Array[String]): Unit =
     renderOnDomContentLoaded(dom.document.querySelector("#chart"), appElement())
 
-  def appElement(): HtmlElement = {
+  def appElement(): HtmlElement =
     div(
-      h1("Hello Vite!"),
+      h1("ChartJs"),
       renderDataTable(),
       ul(
         li("Sum of values: ", child.text <-- allValues.map(_.sum)),
@@ -34,7 +34,6 @@ object App:
       ),
       renderDataGraph(),
     )
-  }
 
   def renderDataTable(): HtmlElement = {
     table(
