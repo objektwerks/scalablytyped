@@ -9,4 +9,5 @@ import org.scalajs.dom.document
     build(document)
   })
 
-  def build(document: HTMLDocument): Unit = document.body // Build chart!
+  def build(document: HTMLDocument): Unit =
+    document.body // Build chart!
