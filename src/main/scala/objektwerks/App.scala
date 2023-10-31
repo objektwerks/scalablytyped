@@ -7,6 +7,8 @@ import org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters.*
 
+import typings.chartJs.mod.*
+
 final class DataItemID
 
 final case class DataItem(id: DataItemID,
@@ -19,7 +21,7 @@ object DataItem:
 object App:
   def main(args: Array[String]): Unit =
     renderOnDomContentLoaded(dom.document.querySelector("#chart"), appElement())
-    
+
   val dataVar = Var[List[DataItem]](List(DataItem(DataItemID(), "one", 1.0)))
   val dataSignal = dataVar.signal
   val allValues = dataSignal.map(_.map(_.value))
@@ -95,8 +97,6 @@ object App:
     )
 
   def renderDataGraph(): HtmlElement =
-    import typings.chartJs.mod.*
-
     var optChart: Option[Chart] = None
 
     canvasTag(
