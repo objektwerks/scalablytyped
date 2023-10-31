@@ -9,16 +9,16 @@ import scala.scalajs.js.JSConverters.*
 
 import typings.chartJs.mod.*
 
-final class DataItemID
-
-final case class DataItem(id: DataItemID,
-                          label: String,
-                          value: Double)
-
-object DataItem:
-  def apply(): DataItem = DataItem(DataItemID(), "?", Math.random())
-
 object App:
+  final class DataItemID
+
+  final case class DataItem(id: DataItemID,
+                            label: String,
+                            value: Double)
+
+  object DataItem:
+    def apply(): DataItem = DataItem(DataItemID(), "?", Math.random())
+
   def main(args: Array[String]): Unit =
     renderOnDomContentLoaded(dom.document.querySelector("#app"), appElement())
 
