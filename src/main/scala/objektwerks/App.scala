@@ -105,8 +105,8 @@ object App:
 
       onMountUnmountCallback(
         mount = { nodeCtx =>
-          val ctx = nodeCtx.thisNode.ref // the DOM HTMLCanvasElement
-          val chart = Chart.apply.newInstance2(ctx, new ChartConfiguration {
+          val canvas = nodeCtx.thisNode.ref
+          val chart = Chart.apply.newInstance2(canvas, new ChartConfiguration {
             `type` = ChartType.bar
             data = new ChartData {
               datasets = js.Array(new ChartDataSets {
