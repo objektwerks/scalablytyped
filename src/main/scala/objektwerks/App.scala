@@ -24,15 +24,15 @@ object App:
 
   val dataVar = Var[List[DataItem]](List(DataItem(DataItemID(), "one", 1.0)))
   val dataSignal = dataVar.signal
-  val allValues = dataSignal.map(_.map(_.value))
+  val dataValues = dataSignal.map(_.map(_.value))
 
   def appElement(): HtmlElement =
     div(
       h1("ChartJs"),
       renderDataTable(),
       ul(
-        li("Sum of values: ", child.text <-- allValues.map(_.sum)),
-        li("Average value: ", child.text <-- allValues.map(vs => vs.sum / vs.size)),
+        li("Sum of values: ", child.text <-- dataValues.map(_.sum)),
+        li("Average value: ", child.text <-- dataValues.map(vs => vs.sum / vs.size)),
       ),
       renderDataGraph(),
     )
