@@ -7,6 +7,7 @@ lazy val scalablytyped = project
     scalacOptions ++= Seq(
       "-Wunused:all"
     ),
+    scalaJSUseMainModuleInitializer := true,
     libraryDependencies ++= Seq(
       "com.raquo" %%% "laminar" % "16.0.0",
       "org.scala-js" %%% "scalajs-dom" % "2.8.0",
