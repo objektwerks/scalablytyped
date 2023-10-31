@@ -76,7 +76,8 @@ object App:
       ),
     )
 
-  def inputForDouble(valueSignal: Signal[Double], valueUpdater: Observer[Double]): Input =
+  def inputForDouble(valueSignal: Signal[Double],
+                     valueUpdater: Observer[Double]): Input =
     val strValue = Var[String]("")
     input(
       typ := "text",
