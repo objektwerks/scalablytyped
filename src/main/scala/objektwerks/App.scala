@@ -20,7 +20,7 @@ object DataItem:
 
 object App:
   def main(args: Array[String]): Unit =
-    renderOnDomContentLoaded(dom.document.querySelector("#chart"), appElement())
+    renderOnDomContentLoaded(dom.document.querySelector("#app"), appElement())
 
   val dataVar = Var[List[DataItem]](List(DataItem(DataItemID(), "one", 1.0)))
   val dataSignal = dataVar.signal
