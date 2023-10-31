@@ -40,3 +40,5 @@ Reference
 ---------
 1. [ScalaJs-Vite Tutorial](https://www.scala-js.org/doc/tutorial/scalajs-vite.html)
 2. [Chartjs](https://www.chartjs.org/docs/latest/)
+3. [ScalaJs-ChartJs](https://www.scala-js.org/doc/tutorial/scalablytyped.html)
+4. [ScalaJs-Laminar-ChartJS Github](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example)
