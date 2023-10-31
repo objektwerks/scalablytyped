@@ -35,7 +35,7 @@ object App:
       renderDataGraph(),
     )
 
-  def renderDataTable(): HtmlElement = {
+  def renderDataTable(): HtmlElement =
     table(
       thead(
         tr(th("Label"), th("Value"), th("Action")),
@@ -49,7 +49,6 @@ object App:
         tr(td(button("➕", onClick --> (_ => dataVar.update(data => data :+ DataItem()))))),
       ),
     )
-  }
 
   def renderDataItem(id: DataItemID, item: Signal[DataItem]): HtmlElement = {
     val labelUpdater = dataVar.updater[String] { (data, newLabel) =>
