@@ -7,22 +7,22 @@ import org.scalajs.dom
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters.*
 
+final class DataItemID
+
+final case class DataItem(id: DataItemID,
+                          label: String,
+                          value: Double)
+
+object DataItem:
+  def apply(): DataItem = DataItem(DataItemID(), "?", Math.random())
+
 object App:
-  final class DataItemID
-
-  final case class DataItem(id: DataItemID,
-                            label: String,
-                            value: Double)
-
-  object DataItem:
-    def apply(): DataItem = DataItem(DataItemID(), "?", Math.random())
-
+  def main(args: Array[String]): Unit =
+    renderOnDomContentLoaded(dom.document.querySelector("#chart"), appElement())
+    
   val dataVar = Var[List[DataItem]](List(DataItem(DataItemID(), "one", 1.0)))
   val dataSignal = dataVar.signal
   val allValues = dataSignal.map(_.map(_.value))
-
-  def main(args: Array[String]): Unit =
-    renderOnDomContentLoaded(dom.document.querySelector("#chart"), appElement())
 
   def appElement(): HtmlElement =
     div(
