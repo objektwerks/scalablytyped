@@ -65,7 +65,7 @@ object App:
       td(button("🗑️", onClick --> (_ => dataVar.update(data => data.filter(_.id != id))))),
     )
 
-  def inputForString(valueSignal: Signal[String], valueUpdater: Observer[String]): Input = {
+  def inputForString(valueSignal: Signal[String], valueUpdater: Observer[String]): Input =
     input(
       typ := "text",
       controlled(
@@ -73,7 +73,6 @@ object App:
         onInput.mapToValue --> valueUpdater,
       ),
     )
-  }
 
   def inputForDouble(valueSignal: Signal[Double], valueUpdater: Observer[Double]): Input = {
     val strValue = Var[String]("")
