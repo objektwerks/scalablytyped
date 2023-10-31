@@ -2,6 +2,10 @@ ScalablyTyped
 -------------
 >ScalaJs using ScalablyTyped, Chartjs and Scala 3.
 
+Note
+----
+>The Chart.js chart still fails to render. Sigh. :(
+
 Install
 -------
 1. brew install node
