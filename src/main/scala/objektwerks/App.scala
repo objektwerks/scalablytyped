@@ -1,7 +1,7 @@
 package objektwerks
 
 import org.scalajs.dom
-import org.scalajs.dom.*
+import org.scalajs.dom.HTMLDocument
 import org.scalajs.dom.document
 
 @main def app() =
