@@ -7,7 +7,7 @@ import com.raquo.laminar.api.L.*
 
 import org.scalajs.dom
 
-object Main {
+object App:
   final class DataItemID
 
   case class DataItem(id: DataItemID, label: String, value: Double)
@@ -145,4 +145,3 @@ object Main {
       },
     )
   }
-}
