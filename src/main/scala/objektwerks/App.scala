@@ -74,7 +74,7 @@ object App:
       ),
     )
 
-  def inputForDouble(valueSignal: Signal[Double], valueUpdater: Observer[Double]): Input = {
+  def inputForDouble(valueSignal: Signal[Double], valueUpdater: Observer[Double]): Input =
     val strValue = Var[String]("")
     input(
       typ := "text",
@@ -90,7 +90,6 @@ object App:
         valueStr.toDoubleOption.foreach(valueUpdater.onNext)
       },
     )
-  }
 
   def renderDataGraph(): HtmlElement = {
     import typings.chartJs.mod.*
