@@ -6,6 +6,10 @@ import org.scalajs.dom
 
 import scala.scalajs.js
 
+/**
+ * See: https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example for original code.
+ */
+
 final class DataItemID
 
 final case class DataItem(id: DataItemID,
