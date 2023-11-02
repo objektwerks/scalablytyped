@@ -18,12 +18,12 @@ final case class DataItem(id: DataItemID,
                           value: Double)
 
 object DataItem:
-  def apply(): DataItem = DataItem(DataItemID(), "?", f"${Random.between(1.0,10.0)}%1.1f".toDouble)
+  def apply(): DataItem = DataItem(DataItemID(), "?", f"${Random.between(1.1,10.1)}%1.1f".toDouble)
 
 @main def runApp(): Unit =
   renderOnDomContentLoaded(dom.document.querySelector("#app"), appElement())
 
-val dataVar = Var[List[DataItem]](List(DataItem(DataItemID(), "one", 1.0)))
+val dataVar = Var[List[DataItem]](List(DataItem(DataItemID(), "one", 1.1)))
 val dataSignal = dataVar.signal
 val dataValues = dataSignal.map(_.map(_.value))
 
