@@ -116,7 +116,7 @@ def renderDataItemChart(): HtmlElement =
           }
           options = new ChartOptions {
             scales = new ChartScales {
-              yAxes = js.Array(new CommonAxe {
+              yAxes = js.Array(new CommonAxe { // invalid scale configuration error at runtime!
                 ticks = new TickOptions {
                   beginAtZero = true
                 }
