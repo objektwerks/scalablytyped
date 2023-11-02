@@ -64,12 +64,12 @@ def renderDataItem(id: DataItemID,
   }
 
   tr(
-    td(inputForString(item.map(_.label), labelUpdater)),
-    td(inputForDouble(item.map(_.value), valueUpdater)),
+    td(labelTextInput(item.map(_.label), labelUpdater)),
+    td(valueTextInput(item.map(_.value), valueUpdater)),
     td(button("🗑️", onClick --> (_ => dataVar.update(data => data.filter(_.id != id))))),
   )
 
-def inputForString(valueSignal: Signal[String],
+def labelTextInput(valueSignal: Signal[String],
                    valueUpdater: Observer[String]): Input =
   input(
     typ := "text",
@@ -79,7 +79,7 @@ def inputForString(valueSignal: Signal[String],
     ),
   )
 
-def inputForDouble(valueSignal: Signal[Double],
+def valueTextInput(valueSignal: Signal[Double],
                    valueUpdater: Observer[Double]): Input =
   val strValue = Var[String]("")
   input(
