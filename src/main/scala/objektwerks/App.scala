@@ -28,13 +28,12 @@ val dataItemValues = dataItemSignal.map(_.map(_.value))
 
 def appElement(): HtmlElement =
   div(
-    h1("ChartJs"),
+    h1("Data"),
     renderDataTable(),
-    ul(
-      li("Sum of values: ", child.text <-- dataItemValues.map(vs => f"${vs.sum}%2.2f")),
-      li("Average value: ", child.text <-- dataItemValues.map(vs => f"${vs.sum / vs.size}%2.2f")),
-    ),
-    renderDataGraph(),
+    p("Sum of values: ", child.text <-- dataItemValues.map(vs => f"${vs.sum}%2.2f")),
+    p("Average value: ", child.text <-- dataItemValues.map(vs => f"${vs.sum / vs.size}%2.2f")),
+    h1("Chart"),
+    renderDataGraph()
   )
 
 def renderDataTable(): HtmlElement =
@@ -54,17 +53,17 @@ def renderDataTable(): HtmlElement =
 
 def renderDataItem(id: DataItemID,
                    item: Signal[DataItem]): HtmlElement =
-  val labelUpdater = dataItemVar.updater[String] { (data, newLabel) =>
+  val labelTextInputUpdater = dataItemVar.updater[String] { (data, newLabel) =>
     data.map(item => if item.id == id then item.copy(label = newLabel) else item)
   }
 
-  val valueUpdater = dataItemVar.updater[Double] { (data, newValue) =>
+  val valueTextInputUpdater = dataItemVar.updater[Double] { (data, newValue) =>
     data.map(item => if item.id == id then item.copy(value = newValue) else item)
   }
 
   tr(
-    td(labelTextInput(item.map(_.label), labelUpdater)),
-    td(valueTextInput(item.map(_.value), valueUpdater)),
+    td(labelTextInput(item.map(_.label), labelTextInputUpdater)),
+    td(valueTextInput(item.map(_.value), valueTextInputUpdater)),
     td(button("🗑️", onClick --> (_ => dataItemVar.update(data => data.filter(_.id != id))))),
   )
 
