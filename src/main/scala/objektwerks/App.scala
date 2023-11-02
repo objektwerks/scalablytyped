@@ -5,6 +5,7 @@ import com.raquo.laminar.api.L.*
 import org.scalajs.dom
 
 import scala.scalajs.js
+import scala.util.Random
 
 /**
  * See: https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example for original code.
@@ -17,7 +18,7 @@ final case class DataItem(id: DataItemID,
                           value: Double)
 
 object DataItem:
-  def apply(): DataItem = DataItem(DataItemID(), "?", Math.random())
+  def apply(): DataItem = DataItem(DataItemID(), "?", f"${Random.between(1.0,10.0)}%1.1f".toDouble)
 
 @main def runApp(): Unit =
   renderOnDomContentLoaded(dom.document.querySelector("#app"), appElement())
