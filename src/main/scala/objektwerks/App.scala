@@ -107,7 +107,7 @@ def renderDataItemChart(): HtmlElement =
       mount = { nodeCtx =>
         val canvas = nodeCtx.thisNode.ref
         val chart = Chart.apply.newInstance2(canvas, new ChartConfiguration {
-          `type` = ChartType.bar
+          `type` = ChartType.bar // bar is not a registered controller error at runtime!
           data = new ChartData {
             datasets = js.Array(new ChartDataSets {
               label = "Value"
