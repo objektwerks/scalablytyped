@@ -22,17 +22,17 @@ object DataItem:
 
 @main def runApp(): Unit = renderOnDomContentLoaded(dom.document.querySelector("#app"), appElement())
 
-val dataVar = Var[List[DataItem]](List(DataItem(DataItemID(), "one", 1.1)))
-val dataSignal = dataVar.signal
-val dataValues = dataSignal.map(_.map(_.value))
+val dataItemVar = Var[List[DataItem]](List(DataItem(DataItemID(), "one", 1.1)))
+val dataItemSignal = dataItemVar.signal
+val dataItemValues = dataItemSignal.map(_.map(_.value))
 
 def appElement(): HtmlElement =
   div(
     h1("ChartJs"),
     renderDataTable(),
     ul(
-      li("Sum of values: ", child.text <-- dataValues.map(vs => f"${vs.sum}%2.2f")),
-      li("Average value: ", child.text <-- dataValues.map(vs => f"${vs.sum / vs.size}%2.2f")),
+      li("Sum of values: ", child.text <-- dataItemValues.map(vs => f"${vs.sum}%2.2f")),
+      li("Average value: ", child.text <-- dataItemValues.map(vs => f"${vs.sum / vs.size}%2.2f")),
     ),
     renderDataGraph(),
   )
@@ -43,29 +43,29 @@ def renderDataTable(): HtmlElement =
       tr(th("Label"), th("Value"), th("Action")),
     ),
     tbody(
-      children <-- dataSignal.split(_.id) { (id, initial, itemSignal) =>
+      children <-- dataItemSignal.split(_.id) { (id, initial, itemSignal) =>
         renderDataItem(id, itemSignal)
       }
     ),
     tfoot(
-      tr(td(button("➕", onClick --> (_ => dataVar.update(data => data :+ DataItem()))))),
+      tr(td(button("➕", onClick --> (_ => dataItemVar.update(data => data :+ DataItem()))))),
     ),
   )
 
 def renderDataItem(id: DataItemID,
                    item: Signal[DataItem]): HtmlElement =
-  val labelUpdater = dataVar.updater[String] { (data, newLabel) =>
+  val labelUpdater = dataItemVar.updater[String] { (data, newLabel) =>
     data.map(item => if item.id == id then item.copy(label = newLabel) else item)
   }
 
-  val valueUpdater = dataVar.updater[Double] { (data, newValue) =>
+  val valueUpdater = dataItemVar.updater[Double] { (data, newValue) =>
     data.map(item => if item.id == id then item.copy(value = newValue) else item)
   }
 
   tr(
     td(labelTextInput(item.map(_.label), labelUpdater)),
     td(valueTextInput(item.map(_.value), valueUpdater)),
-    td(button("🗑️", onClick --> (_ => dataVar.update(data => data.filter(_.id != id))))),
+    td(button("🗑️", onClick --> (_ => dataItemVar.update(data => data.filter(_.id != id))))),
   )
 
 def labelTextInput(valueSignal: Signal[String],
@@ -135,7 +135,7 @@ def renderDataGraph(): HtmlElement =
       }
     ),
 
-    dataSignal --> { data =>
+    dataItemSignal --> { data =>
       for (chart <- optChart)
         chart.data.labels = data.map(_.label).toJSArray
         chart.data.datasets.get(0).data = data.map(_.value).toJSArray
