@@ -134,10 +134,10 @@ def renderDataItemChart(): HtmlElement =
       }
     ),
 
-    dataItemSignal --> { data =>
+    dataItemSignal --> { dataItems =>
       for (chart <- optChart)
-        chart.data.labels = data.map(_.label).toJSArray
-        chart.data.datasets.get(0).data = data.map(_.value).toJSArray
+        chart.data.labels = dataItems.map(_.label).toJSArray
+        chart.data.datasets.get(0).data = dataItems.map(_.value).toJSArray
         chart.update()
     },
   )
