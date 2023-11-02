@@ -33,7 +33,7 @@ def appElement(): HtmlElement =
     renderDataTable(),
     ul(
       li("Sum of values: ", child.text <-- dataValues.map(_.sum)),
-      li("Average value: ", child.text <-- dataValues.map(vs => vs.sum / vs.size)),
+      li("Average value: ", child.text <-- dataValues.map(vs => f"${vs.sum / vs.size}%2.2f")),
     ),
     renderDataGraph(),
   )
