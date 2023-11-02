@@ -29,14 +29,14 @@ val dataItemValues = dataItemSignal.map(_.map(_.value))
 def appElement(): HtmlElement =
   div(
     h1("Data"),
-    renderDataTable(),
+    renderDataItemTable(),
     p("Sum of values: ", child.text <-- dataItemValues.map(vs => f"${vs.sum}%2.2f")),
     p("Average value: ", child.text <-- dataItemValues.map(vs => f"${vs.sum / vs.size}%2.2f")),
     h1("Chart"),
-    renderDataGraph()
+    renderDataItemChart()
   )
 
-def renderDataTable(): HtmlElement =
+def renderDataItemTable(): HtmlElement =
   table(
     thead(
       tr(th("Label"), th("Value"), th("Action")),
@@ -95,7 +95,7 @@ def valueTextInput(valueSignal: Signal[Double],
     },
   )
 
-def renderDataGraph(): HtmlElement =
+def renderDataItemChart(): HtmlElement =
   import scala.scalajs.js.JSConverters.*
   import typings.chartJs.mod.*
 
