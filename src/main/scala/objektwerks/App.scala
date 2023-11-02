@@ -20,8 +20,7 @@ final case class DataItem(id: DataItemID,
 object DataItem:
   def apply(): DataItem = DataItem(DataItemID(), "?", f"${Random.between(1.1,10.1)}%1.1f".toDouble)
 
-@main def runApp(): Unit =
-  renderOnDomContentLoaded(dom.document.querySelector("#app"), appElement())
+@main def runApp(): Unit = renderOnDomContentLoaded(dom.document.querySelector("#app"), appElement())
 
 val dataVar = Var[List[DataItem]](List(DataItem(DataItemID(), "one", 1.1)))
 val dataSignal = dataVar.signal
@@ -137,10 +136,9 @@ def renderDataGraph(): HtmlElement =
     ),
 
     dataSignal --> { data =>
-      for (chart <- optChart) {
+      for (chart <- optChart)
         chart.data.labels = data.map(_.label).toJSArray
         chart.data.datasets.get(0).data = data.map(_.value).toJSArray
         chart.update()
-      }
     },
   )
