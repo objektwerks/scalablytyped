@@ -32,7 +32,7 @@ def appElement(): HtmlElement =
     h1("ChartJs"),
     renderDataTable(),
     ul(
-      li("Sum of values: ", child.text <-- dataValues.map(vs => Math.round(vs.sum))),
+      li("Sum of values: ", child.text <-- dataValues.map(vs => f"${vs.sum}%2.2f")),
       li("Average value: ", child.text <-- dataValues.map(vs => f"${vs.sum / vs.size}%2.2f")),
     ),
     renderDataGraph(),
