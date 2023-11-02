@@ -99,7 +99,7 @@ def renderDataItemChart(): HtmlElement =
   import scala.scalajs.js.JSConverters.*
   import typings.chartJs.mod.*
 
-  var optChart: Option[Chart] = None
+  var optionalChart: Option[Chart] = None
 
   canvasTag(
     width := "100%",
@@ -126,16 +126,16 @@ def renderDataItemChart(): HtmlElement =
             }
           }
         })
-        optChart = Some(chart)
+        optionalChart = Some(chart)
       },
       unmount = { thisNode =>
-        for (chart <- optChart) chart.destroy()
-        optChart = None
+        for (chart <- optionalChart) chart.destroy()
+        optionalChart = None
       }
     ),
 
     dataItemSignal --> { dataItems =>
-      for (chart <- optChart)
+      for (chart <- optionalChart)
         chart.data.labels = dataItems.map(_.label).toJSArray
         chart.data.datasets.get(0).data = dataItems.map(_.value).toJSArray
         chart.update()
