@@ -51,12 +51,12 @@ def renderDataItemTable(): HtmlElement =
 
 def renderDataItem(id: DataItemID,
                    item: Signal[DataItem]): HtmlElement =
-  val labelTextInputUpdater = dataItemVar.updater[String] { (data, newLabel) =>
-    data.map(item => if item.id == id then item.copy(label = newLabel) else item)
+  val labelTextInputUpdater = dataItemVar.updater[String] { (dataItems, newLabel) =>
+    dataItems.map(item => if item.id == id then item.copy(label = newLabel) else item)
   }
 
-  val valueTextInputUpdater = dataItemVar.updater[Double] { (data, newValue) =>
-    data.map(item => if item.id == id then item.copy(value = newValue) else item)
+  val valueTextInputUpdater = dataItemVar.updater[Double] { (dataItems, newValue) =>
+    dataItems.map(item => if item.id == id then item.copy(value = newValue) else item)
   }
 
   tr(
