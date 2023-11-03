@@ -7,9 +7,7 @@ object Registrar:
   @js.native
   @JSImport("chart.js")
   object Chart extends js.Object:
-    // Can accept: chart.js controllers, elements, plugins
     def register(components: js.Object*): Unit = js.native
-    def unregister(components: js.Object*): Unit = js.native
 
   @js.native
   @JSImport("chart.js")
