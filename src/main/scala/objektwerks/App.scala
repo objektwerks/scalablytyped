@@ -14,12 +14,9 @@ import scala.util.Random
 
 final class DataItemID
 
-final case class DataItem(id: DataItemID,
-                          label: String,
-                          value: Double)
-
-object DataItem:
-  def apply(): DataItem = DataItem(DataItemID(), "?", f"${Random.between(1.1,10.1)}%1.1f".toDouble)
+final case class DataItem(id: DataItemID = DataItemID(),
+                          label: String = "?",
+                          value: Double = f"${Random.between(1.1,10.1)}%1.1f".toDouble)
 
 val dataItemVar = Var[List[DataItem]](List(DataItem(DataItemID(), "one", 1.1)))
 val dataItemSignal = dataItemVar.signal
