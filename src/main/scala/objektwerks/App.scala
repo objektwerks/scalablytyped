@@ -110,21 +110,12 @@ def renderDataItemChart(): HtmlElement =
       mount = { nodeCtx =>
         val canvas = nodeCtx.thisNode.ref
         val chart = Chart.apply.newInstance2(canvas, new ChartConfiguration {
-          `type` = ChartType.bar // bar is not a registered controller runtime error! A string value of "bar" does not resolve the issue.
+          `type` = ChartType.bar
           data = new ChartData {
             datasets = js.Array(new ChartDataSets {
               label = "Value"
               borderWidth = 1
             })
-          }
-          options = new ChartOptions { // js.undefined resolves the below issue. :)
-            scales = new ChartScales {
-              yAxes = js.Array(new CommonAxe { // invalid scale configuration for yAxes runtime error!
-                ticks = new TickOptions {
-                  beginAtZero = true
-                }
-              })
-            }
           }
         })
         optionalChart = Some(chart)
