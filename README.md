@@ -1,6 +1,6 @@
 ScalablyTyped
 -------------
->ScalaJs using ScalablyTyped, Chart.js and Scala 3.
+>ScalaJs app using ScalablyTyped, Chart.js and Scala 3.
 
 Note
 ----
