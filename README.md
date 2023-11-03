@@ -19,7 +19,7 @@ Note
 
 >Clearly, to accommodate all Chart.js registrable components, registrar.Registrar would require additional work.
 
->Frankly, the ScalaJs community needs a custom Chart.js component - to help developers avoid these and other Chart.js pitfalls.
+>I suspect the ScalaJs community needs a custom Chart.js component - to help developers avoid these and other Chart.js pitfalls.
 
 Install
 -------
