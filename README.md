@@ -14,6 +14,8 @@ Note
 * [Weather Gradient View](https://github.com/raquo/laminar-full-stack-demo/blob/master/client/src/main/scala/com/raquo/app/weather/WeatherGradientView.scala#L18-L191)
 * [Chart](https://github.com/raquo/laminar-full-stack-demo/blob/master/client/src/main/scala/vendor/chartjs/Chart.scala)
 
+>Clearly, to accommodate all Chart.js registrable components, registrar.Registrar would require additional work. :)
+
 Install
 -------
 1. brew install node
