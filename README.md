@@ -7,7 +7,7 @@ Note
 >Initially the Chart.js chart failed to render. So I opened this issue:
 >[Chart Rendering Fails](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example/issues/6)
 
->See registrar.Registrar for Chart.js component registration.
+>As a resolution, I put togehter registrar.Registrar, allowing for Chart.js component registration.
 
 Install
 -------
