@@ -103,8 +103,8 @@ def renderDataItemChart(): HtmlElement =
     height := "500px",
 
     onMountUnmountCallback(
-      mount = { nodeCtx =>
-        val canvas = nodeCtx.thisNode.ref
+      mount = { mountContext =>
+        val canvas = mountContext.thisNode.ref
         val chart = Chart.apply.newInstance2(canvas, new ChartConfiguration {
           `type` = ChartType.bar
           data = new ChartData {
