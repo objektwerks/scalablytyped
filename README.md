@@ -10,7 +10,7 @@ Note
 
 >So I opened this issue: [Chart Rendering Fails](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example/issues/6)
 
->As a resolution, I built registrar.Registrar, allowing for Chart.js component registration.
+>As a resolution, I built registrar.Registrar, allowing for required Chart.js component registration.
 >My hack, using advanced copy-n-paste techniques, is based on Nikita Gazarov's work:
 
 * [Weather Chart](https://demo.laminar.dev/app/weather/gradient/squamish)
