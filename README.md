@@ -8,6 +8,7 @@ Note
 >[Chart Rendering Fails](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example/issues/6)
 
 >As a resolution, I put togehter registrar.Registrar, allowing for Chart.js component registration.
+>This idea came from Nikita's work: [Weather Chart](https://demo.laminar.dev/app/weather/gradient/squamish)
 
 Install
 -------
