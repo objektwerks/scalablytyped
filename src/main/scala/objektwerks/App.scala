@@ -12,13 +12,13 @@ import scala.util.Random
  */
 @main def runApp(): Unit = renderOnDomContentLoaded(dom.document.querySelector("#app"), appElement())
 
-final class DataItemID
+final class Id
 
-final case class DataItem(id: DataItemID = DataItemID(),
+final case class DataItem(id: Id = Id(),
                           label: String = "?",
                           value: Double = f"${Random.between(1.1,10.1)}%1.1f".toDouble)
 
-val dataItemVar = Var[List[DataItem]](List(DataItem(DataItemID(), "one", 1.1)))
+val dataItemVar = Var[List[DataItem]](List(DataItem(Id(), "one", 1.1)))
 val dataItemSignal = dataItemVar.signal
 val dataItemValues = dataItemSignal.map(_.map(_.value))
 
@@ -45,7 +45,7 @@ def renderDataItemTable(): HtmlElement =
     ),
   )
 
-def renderDataItem(id: DataItemID,
+def renderDataItem(id: Id,
                    item: Signal[DataItem]): HtmlElement =
   val labelTextInputUpdater = dataItemVar.updater[String] { (dataItems, newLabel) =>
     dataItems.map(item => if item.id == id then item.copy(label = newLabel) else item)
