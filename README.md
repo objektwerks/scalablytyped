@@ -16,7 +16,8 @@ Note
 * [Chart](https://github.com/raquo/laminar-full-stack-demo/blob/master/client/src/main/scala/vendor/chartjs/Chart.scala)
 
 >Clearly, to accommodate all Chart.js registrable components, registrar.Registrar would require additional work.
->Frankly, the Scalajs community really needs a custom Chart.js component.
+
+>Frankly, the ScalaJs community needs a custom Chart.js component - to help developers avoid these and other Chart.js pitfalls.
 
 Install
 -------
