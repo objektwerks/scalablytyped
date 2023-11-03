@@ -10,6 +10,7 @@ import scala.util.Random
 /**
  * See: https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example for original code.
  */
+@main def runApp(): Unit = renderOnDomContentLoaded(dom.document.querySelector("#app"), appElement())
 
 final class DataItemID
 
@@ -19,8 +20,6 @@ final case class DataItem(id: DataItemID,
 
 object DataItem:
   def apply(): DataItem = DataItem(DataItemID(), "?", f"${Random.between(1.1,10.1)}%1.1f".toDouble)
-
-@main def runApp(): Unit = renderOnDomContentLoaded(dom.document.querySelector("#app"), appElement())
 
 val dataItemVar = Var[List[DataItem]](List(DataItem(DataItemID(), "one", 1.1)))
 val dataItemSignal = dataItemVar.signal
