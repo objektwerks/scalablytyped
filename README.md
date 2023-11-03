@@ -9,7 +9,7 @@ Note
 
 >As a resolution, I put togehter registrar.Registrar, allowing for Chart.js component registration.
 >This idea came from Nikita's work: [Weather Chart](https://demo.laminar.dev/app/weather/gradient/squamish)
->See:
+>Aslo see:
 
 * [Weather Gradient View](https://github.com/raquo/laminar-full-stack-demo/blob/master/client/src/main/scala/com/raquo/app/weather/WeatherGradientView.scala#L18-L191)
 * [Chart](https://github.com/raquo/laminar-full-stack-demo/blob/master/client/src/main/scala/vendor/chartjs/Chart.scala)
