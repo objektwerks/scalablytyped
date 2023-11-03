@@ -1,9 +1,9 @@
 package objektwerks.registrar
 
-object Registrar:
-  import scala.scalajs.js
-  import scala.scalajs.js.annotation.JSImport
+import scala.scalajs.js
+import scala.scalajs.js.annotation.JSImport
 
+object Registrar:
   @js.native
   @JSImport("chart.js")
   object Chart extends js.Object:
