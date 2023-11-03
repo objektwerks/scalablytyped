@@ -1,5 +1,33 @@
 package objektwerks
 
+  package registrar
+    object Registrar:
+      import scala.scalajs.js
+      import scala.scalajs.js.annotation.JSImport
+
+      @js.native
+      @JSImport("chart.js")
+      object Chart extends js.Object:
+        // Can accept: chart.js controllers, elements, plugins
+        def register(components: js.Object*): Unit = js.native
+        def unregister(components: js.Object*): Unit = js.native
+
+      @js.native
+      @JSImport("chart.js")
+      object BarController extends js.Object
+
+      @js.native
+      @JSImport("chart.js")
+      object CategoryScale extends js.Object
+
+      @js.native
+      @JSImport("chart.js")
+      object LinearScale extends js.Object
+
+      @js.native
+      @JSImport("chart.js")
+      object BarElement extends js.Object
+
 import com.raquo.laminar.api.L.*
 
 import org.scalajs.dom
@@ -96,6 +124,9 @@ def valueTextInput(valueSignal: Signal[Double],
 def renderDataItemChart(): HtmlElement =
   import scala.scalajs.js.JSConverters.*
   import typings.chartJs.mod.*
+  import registrar.Registrar.{BarController, BarElement, CategoryScale, LinearScale, Chart => ChartJs}
+
+  ChartJs.register(BarController, BarElement, CategoryScale, LinearScale)
 
   var optionalChart: Option[Chart] = None
 
