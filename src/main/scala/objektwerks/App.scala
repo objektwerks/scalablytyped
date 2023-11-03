@@ -27,8 +27,8 @@ def appElement(): HtmlElement =
     h1("Data"),
     renderDataItemTable(),
     ul(
-      li("Sum: ", child.text <-- dataItemValues.map(vs => f"${vs.sum}%2.2f")),
-      li("Avg: ", child.text <-- dataItemValues.map(vs => f"${vs.sum / vs.size}%2.2f"))
+      li("Sum - ", child.text <-- dataItemValues.map(vs => f"${vs.sum}%2.2f")),
+      li("Avg - ", child.text <-- dataItemValues.map(vs => f"${vs.sum / vs.size}%2.2f"))
     ),
     h1("Chart"),
     renderDataItemChart()
