@@ -4,25 +4,25 @@ ScalablyTyped
 
 Note
 ----
->This project mimics this project: [ScalaJs-Laminar-ChartJS Github](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example)
+>This project is inspired by: [ScalaJs-Laminar-ChartJS Github](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example)
 
 >Initially, though, the Chart.js chart failed to render.
 
 >So I opened this issue: [Chart Rendering Fails](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example/issues/6)
 
->As a resolution, I built registrar.Registrar, allowing for required Chart.js component registration.
+>As a solution, I built registrar.Registrar, allowing for ***required*** Chart.js component registration.
 >My hack, using advanced copy-n-paste techniques, is based on Nikita Gazarov's work:
 
 * [Weather Chart](https://demo.laminar.dev/app/weather/gradient/squamish)
 
->More importantly see:
+>See the code:
 
 * [Weather Gradient View](https://github.com/raquo/laminar-full-stack-demo/blob/master/client/src/main/scala/com/raquo/app/weather/WeatherGradientView.scala#L18-L191)
 * [Chart](https://github.com/raquo/laminar-full-stack-demo/blob/master/client/src/main/scala/vendor/chartjs/Chart.scala)
 
->Clearly, to accommodate all Chart.js registrable components, registrar.Registrar would require additional work.
+>Clearly, to accommodate ***all*** Chart.js registrable components, registrar.Registrar would require additional work.
 
->I suspect the ScalaJs community needs a custom Chart.js component - to help developers avoid these and other Chart.js pitfalls.
+>I suspect the ScalaJs community ***needs*** a custom Chart.js component - to help developers avoid these and other Chart.js pitfalls.
 
 Install
 -------
