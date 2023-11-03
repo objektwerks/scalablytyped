@@ -16,7 +16,7 @@ final class Id
 
 final case class DataItem(id: Id = Id(),
                           label: String = "?",
-                          value: Double = f"${Random.between(1.1, 10.1)}%1.1f".toDouble)
+                          value: Double = f"${Random.between(1.1, 9.1)}%1.1f".toDouble)
 
 val dataItemVar = Var[List[DataItem]](List(DataItem(Id(), "one", 1.1)))
 val dataItemSignal = dataItemVar.signal
