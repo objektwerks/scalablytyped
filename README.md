@@ -4,11 +4,14 @@ ScalablyTyped
 
 Note
 ----
->Initially the Chart.js chart failed to render. So I opened this issue:
->[Chart Rendering Fails](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example/issues/6)
+>This project mimics this project: [ScalaJs-Laminar-ChartJS Github](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example)
+
+>Initially, though, the Chart.js chart failed to render.
+
+>So I opened this issue: [Chart Rendering Fails](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example/issues/6)
 
 >As a resolution, I built registrar.Registrar, allowing for Chart.js component registration.
->My hack, using advanced copy-n-paste skills, was based on Nikita Gazarov's work:
+>My hack, using advanced copy-n-paste techniques, is based on Nikita Gazarov's work:
 
 * [Weather Chart](https://demo.laminar.dev/app/weather/gradient/squamish)
 
