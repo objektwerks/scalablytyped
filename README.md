@@ -4,9 +4,9 @@ ScalablyTyped
 
 Note
 ----
->This project is inspired by: [ScalaJs-Laminar-ChartJS Github](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example)
+>This project is ***inspired*** by: [ScalaJs-Laminar-ChartJS Github](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example)
 
->Initially, though, the Chart.js chart failed to render.
+>Initially, though, the Chart.js chart ***failed*** to render.
 
 >So I opened this issue: [Chart Rendering Fails](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example/issues/6)
 
