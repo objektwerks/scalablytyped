@@ -117,15 +117,16 @@ def renderDataItemChart(): HtmlElement =
         optionalChart = Some(chart)
       },
       unmount = { _ =>
-        for (chart <- optionalChart) chart.destroy()
+        optionalChart.foreach(chart => chart.destroy())
         optionalChart = None
       }
     ),
 
     dataItemSignal --> { dataItems =>
-      for (chart <- optionalChart)
+      optionalChart.foreach { chart =>
         chart.data.labels = dataItems.map(_.label).toJSArray
         chart.data.datasets.get(0).data = dataItems.map(_.value).toJSArray
         chart.update()
+      }
     },
   )
