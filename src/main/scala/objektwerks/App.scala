@@ -116,7 +116,7 @@ def renderDataItemChart(): HtmlElement =
         })
         optionalChart = Some(chart)
       },
-      unmount = { thisNode =>
+      unmount = { _ =>
         for (chart <- optionalChart) chart.destroy()
         optionalChart = None
       }
