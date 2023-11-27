@@ -73,21 +73,21 @@ def labelTextInput(stringSignal: Signal[String],
     ),
   )
 
-def valueTextInput(valueSignal: Signal[Double],
-                   valueUpdater: Observer[Double]): Input =
-  val strValue = Var[String]("")
+def valueTextInput(doubleSignal: Signal[Double],
+                   doubleObserver: Observer[Double]): Input =
+  val stringVar = Var[String]("")
   input(
     typ := "text",
     controlled(
-      value <-- strValue.signal,
-      onInput.mapToValue --> strValue,
+      value <-- stringVar.signal,
+      onInput.mapToValue --> stringVar,
     ),
-    valueSignal --> strValue.updater[Double] { (prevStr, newValue) =>
-      if prevStr.toDoubleOption.contains(newValue) then prevStr
-      else newValue.toString
+    doubleSignal --> stringVar.updater[Double] { (previousString, newDouble) =>
+      if previousString.toDoubleOption.contains(newDouble) then previousString
+      else newDouble.toString
     },
-    strValue.signal --> { valueStr =>
-      valueStr.toDoubleOption.foreach(valueUpdater.onNext)
+    stringVar.signal --> { string =>
+      string.toDoubleOption.foreach(doubleObserver.onNext)
     },
   )
 
