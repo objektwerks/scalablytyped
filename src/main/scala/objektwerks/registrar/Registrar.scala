@@ -35,6 +35,10 @@ object Registrar:
 
   @js.native
   @JSImport("chart.js")
+  object ArcElement extends js.Object
+
+  @js.native
+  @JSImport("chart.js")
   object CategoryScale extends js.Object
 
   @js.native
