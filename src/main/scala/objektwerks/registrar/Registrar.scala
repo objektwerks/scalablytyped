@@ -32,3 +32,7 @@ object Registrar:
   @js.native
   @JSImport("chart.js")
   object BarElement extends js.Object
+
+  @js.native
+  @JSImport("chart.js")
+  object PointElement extends js.Object
