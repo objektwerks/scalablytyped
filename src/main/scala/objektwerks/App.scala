@@ -43,7 +43,7 @@ def renderDataItemTable(): HtmlElement =
       children <-- dataItemSignal.split(_.id) { (id, initial, signal) => renderDataItem(id, signal) }
     ),
     tfoot(
-      tr(td(button("➕", onClick --> (_ => dataItemVar.update(data => data :+ DataItem()))))),
+      tr(td(button("➕", onClick --> (_ => dataItemVar.update(dataItems => dataItems :+ DataItem()))))),
     ),
   )
 
