@@ -48,18 +48,18 @@ def renderDataItemTable(): HtmlElement =
   )
 
 def renderDataItem(id: Id,
-                   item: Signal[DataItem]): HtmlElement =
+                   signal: Signal[DataItem]): HtmlElement =
   val labelTextInputUpdater = dataItemVar.updater[String] { (dataItems, newLabel) =>
-    dataItems.map(item => if item.id == id then item.copy(label = newLabel) else item)
+    dataItems.map(dataItem => if dataItem.id == id then dataItem.copy(label = newLabel) else dataItem)
   }
 
   val valueTextInputUpdater = dataItemVar.updater[Double] { (dataItems, newValue) =>
-    dataItems.map(item => if item.id == id then item.copy(value = newValue) else item)
+    dataItems.map(dataItem => if dataItem.id == id then dataItem.copy(value = newValue) else dataItem)
   }
 
   tr(
-    td(labelTextInput(item.map(_.label), labelTextInputUpdater)),
-    td(valueTextInput(item.map(_.value), valueTextInputUpdater)),
+    td(labelTextInput(signal.map(_.label), labelTextInputUpdater)),
+    td(valueTextInput(signal.map(_.value), valueTextInputUpdater)),
     td(button("🗑️", onClick --> (_ => dataItemVar.update(data => data.filter(_.id != id))))),
   )
 
