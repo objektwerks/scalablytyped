@@ -20,15 +20,15 @@ final case class DataItem(id: Id = Id(),
 
 val dataItemVar = Var[List[DataItem]](List(DataItem(Id(), "one", 1.1)))
 val dataItemSignal = dataItemVar.signal
-val dataItemValues = dataItemSignal.map(_.map(_.value))
+val doubleSignal = dataItemSignal.map(_.map(_.value))
 
 def appElement(): HtmlElement =
   div(
     h1("Data"),
     renderDataItemTable(),
     ul(
-      li("Sum - ", child.text <-- dataItemValues.map(vs => f"${vs.sum}%2.2f")),
-      li("Avg - ", child.text <-- dataItemValues.map(vs => f"${vs.sum / vs.size}%2.2f"))
+      li("Sum - ", child.text <-- doubleSignal.map(vs => f"${vs.sum}%2.2f")),
+      li("Avg - ", child.text <-- doubleSignal.map(vs => f"${vs.sum / vs.size}%2.2f"))
     ),
     h1("Chart"),
     renderDataItemChart()
