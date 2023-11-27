@@ -22,6 +22,8 @@ Note
 
 >Clearly, to accommodate ***all*** Chart.js registrable components, registrar.Registrar would ***require*** additional work.
 
+>Currently, this project supports ChartType.bar, ChartType.line and ChartType.pie. Simply edited the ChartType in App.
+
 >I suspect the ScalaJs community ***needs*** a custom Chart.js component - to help developers avoid these and other Chart.js pitfalls.
 
 Install
