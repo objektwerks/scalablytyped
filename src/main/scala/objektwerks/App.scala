@@ -63,13 +63,13 @@ def renderDataItem(id: Id,
     td(button("🗑️", onClick --> (_ => dataItemVar.update(data => data.filter(_.id != id))))),
   )
 
-def labelTextInput(valueSignal: Signal[String],
-                   valueUpdater: Observer[String]): Input =
+def labelTextInput(stringSignal: Signal[String],
+                   stringObserver: Observer[String]): Input =
   input(
     typ := "text",
     controlled(
-      value <-- valueSignal,
-      onInput.mapToValue --> valueUpdater,
+      value <-- stringSignal,
+      onInput.mapToValue --> stringObserver,
     ),
   )
 
