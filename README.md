@@ -22,7 +22,7 @@ Note
 
 >To accommodate ***all*** Chart.js registrable components, registrar.Registrar will ***require*** additional work.
 
->Currently, this project supports ChartType.**bar**, ChartType.**line** and ChartType.**pie**. Simply edited the ChartType in objektwerks.App.
+>Currently, this project supports ChartType.**bar**, ChartType.**line** and ChartType.**pie**. Simply edit the ChartType in objektwerks.App.
 
 Install
 -------
