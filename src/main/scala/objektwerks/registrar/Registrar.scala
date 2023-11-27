@@ -3,6 +3,9 @@ package objektwerks.registrar
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
+/**
+  * Supports ChartType.bar, ChartType.line and ChartType.pie
+  */
 object Registrar:
   @js.native
   @JSImport("chart.js")
