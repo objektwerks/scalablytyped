@@ -95,11 +95,11 @@ def renderDataItemChart(): HtmlElement =
   import scala.scalajs.js.JSConverters.*
   import typings.chartJs.mod.*
   import registrar.Registrar.{
-    BarController, BarElement, CategoryScale, LineController, LinearScale, PieController, PointElement, Chart => ChartJs
+    BarController, BarElement, CategoryScale, LineController, LineElement, LinearScale, PieController, PointElement, Chart => ChartJs
   }
 
   ChartJs.register(
-    BarController, BarElement, CategoryScale, LineController, LinearScale, PieController, PointElement
+    BarController, BarElement, CategoryScale, LineController, LineElement, LinearScale, PieController, PointElement
   )
 
   var optionalChart: Option[Chart] = None
