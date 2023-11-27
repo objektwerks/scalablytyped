@@ -112,7 +112,9 @@ def renderDataItemChart(): HtmlElement =
       mount = { mountContext =>
         val canvas = mountContext.thisNode.ref
         val chart = Chart.apply.newInstance2(canvas, new ChartConfiguration {
-          `type` = ChartType.line  // Support for: bar, line and pie included!
+          // `type` = ChartType.bar
+          // `type` = ChartType.line
+          `type` = ChartType.pie
           data = new ChartData {
             datasets = js.Array(new ChartDataSets {
               label = "Value"
