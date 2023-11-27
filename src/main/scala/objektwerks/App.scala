@@ -82,8 +82,8 @@ def doubleTextInput(doubleSignal: Signal[Double],
       value <-- stringVar.signal,
       onInput.mapToValue --> stringVar,
     ),
-    doubleSignal --> stringVar.updater[Double] { (previousString, newDouble) =>
-      if previousString.toDoubleOption.contains(newDouble) then previousString
+    doubleSignal --> stringVar.updater[Double] { (oldDoubleAsString, newDouble) =>
+      if oldDoubleAsString.toDoubleOption.contains(newDouble) then oldDoubleAsString
       else newDouble.toString
     },
     stringVar.signal --> { string =>
