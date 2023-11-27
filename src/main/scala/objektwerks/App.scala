@@ -94,9 +94,13 @@ def valueTextInput(doubleSignal: Signal[Double],
 def renderDataItemChart(): HtmlElement =
   import scala.scalajs.js.JSConverters.*
   import typings.chartJs.mod.*
-  import registrar.Registrar.{BarController, BarElement, CategoryScale, LinearScale, Chart => ChartJs}
+  import registrar.Registrar.{
+    BarController, BarElement, CategoryScale, LineController, LinearScale, PieController, Chart => ChartJs
+  }
 
-  ChartJs.register(BarController, BarElement, CategoryScale, LinearScale)
+  ChartJs.register(
+    BarController, BarElement, CategoryScale, LineController, LinearScale, PieController
+  )
 
   var optionalChart: Option[Chart] = None
 
