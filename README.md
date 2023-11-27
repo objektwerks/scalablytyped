@@ -15,7 +15,7 @@ Note
 
 * [Weather Chart](https://demo.laminar.dev/app/weather/gradient/squamish)
 
->See the code here:
+>See the code:
 
 * [Weather Gradient View](https://github.com/raquo/laminar-full-stack-demo/blob/master/client/src/main/scala/com/raquo/app/weather/WeatherGradientView.scala#L18-L191)
 * [Chart](https://github.com/raquo/laminar-full-stack-demo/blob/master/client/src/main/scala/vendor/chartjs/Chart.scala)
