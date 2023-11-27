@@ -15,6 +15,10 @@ object Registrar:
 
   @js.native
   @JSImport("chart.js")
+  object LineController extends js.Object
+
+  @js.native
+  @JSImport("chart.js")
   object CategoryScale extends js.Object
 
   @js.native
