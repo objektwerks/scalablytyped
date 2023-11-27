@@ -15,7 +15,19 @@ object Registrar:
 
   @js.native
   @JSImport("chart.js")
+  object BarElement extends js.Object
+
+  @js.native
+  @JSImport("chart.js")
   object LineController extends js.Object
+
+  @js.native
+  @JSImport("chart.js")
+  object LineElement extends js.Object
+
+  @js.native
+  @JSImport("chart.js")
+  object PointElement extends js.Object
 
   @js.native
   @JSImport("chart.js")
@@ -28,11 +40,3 @@ object Registrar:
   @js.native
   @JSImport("chart.js")
   object LinearScale extends js.Object
-
-  @js.native
-  @JSImport("chart.js")
-  object BarElement extends js.Object
-
-  @js.native
-  @JSImport("chart.js")
-  object PointElement extends js.Object
