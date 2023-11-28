@@ -4,7 +4,7 @@ lazy val scalablytyped = project
   .in(file("."))
   .enablePlugins(ScalaJSPlugin, ScalablyTypedConverterExternalNpmPlugin)
   .settings(
-    version := "0.1-SNAPSHOT",
+    version := "0.1",
     scalaVersion := "3.3.1",
     scalacOptions ++= Seq(
       "-Wunused:all"
