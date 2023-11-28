@@ -2,8 +2,7 @@ import org.scalajs.linker.interface.ModuleSplitStyle
 
 lazy val scalablytyped = project
   .in(file("."))
-  .enablePlugins(ScalaJSPlugin)
-  .enablePlugins(ScalablyTypedConverterExternalNpmPlugin)
+  .enablePlugins(ScalaJSPlugin, ScalablyTypedConverterExternalNpmPlugin)
   .settings(
     scalaVersion := "3.3.1",
     scalacOptions ++= Seq(
