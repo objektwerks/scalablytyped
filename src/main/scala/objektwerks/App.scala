@@ -122,14 +122,12 @@ def renderDataItemChart(): HtmlElement =
           options = new ChartOptions {
             scales = new ChartScales {
               xAxes = js.Array(new ChartXAxe {
-                `type` = ScaleType.time
                 title = new ChartTitleOptions {
                   display = true
                   text = "Time"
                 }
               })
               yAxes = js.Array(new ChartYAxe {
-                `type` = ScaleType.time
                 title = new ChartTitleOptions {
                   display = true
                   text = "Series"
