@@ -121,6 +121,22 @@ def renderDataItemChart(): HtmlElement =
               borderWidth = 1
             })
           }
+          options = new ChartOptions {
+            scales = new ChartScales {
+              xAxes = js.Array(new ChartXAxe {
+                title = new ChartTitleOptions {
+                  display = true
+                  text = "Time"
+                }
+              })
+              yAxes = js.Array(new ChartYAxe {
+                title = new ChartTitleOptions {
+                  display = true
+                  text = "Series"
+                }
+              })
+            }
+          }
         })
         optionalChart = Some(chart)
       },
