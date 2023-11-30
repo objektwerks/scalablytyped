@@ -117,8 +117,6 @@ def renderDataItemChart(): HtmlElement =
           // `type` = ChartType.pie
           data = new ChartData {
             datasets = js.Array(new ChartDataSets {
-              label = "Value"
-              borderWidth = 1
             })
           }
           options = new ChartOptions {
