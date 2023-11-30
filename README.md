@@ -24,6 +24,12 @@ Note
 
 >Currently, this project supports ChartType.**bar**, ChartType.**line** and ChartType.**pie**. Simply edit the ChartType in objektwerks.App.
 
+Warning
+-------
+>Support for x and y axes was added; but fails with these errors:
+1. Invalid scale configuration for scale: xAxes
+2. Invalid scale configuration for scale: yAxes
+
 Install
 -------
 1. brew install node
