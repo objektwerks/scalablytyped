@@ -10,7 +10,7 @@ import scala.util.Random
 /**
  * See: https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example for the original code.
  */
-@main def runApp(): Unit = renderOnDomContentLoaded(dom.document.querySelector("#app"), appElement())
+@main def runApp(): Unit = renderOnDomContentLoaded(dom.document.querySelector("#app"), renderApp())
 
 final class Id
 
@@ -25,7 +25,7 @@ val doubleSignal = dataItemsSignal.map(_.map(_.value))
 val chartTypes = List("bar", "line", "pie")
 val chartBus = EventBus[HtmlElement]()
 
-def appElement(): HtmlElement =
+def renderApp(): HtmlElement =
   div(
     h1("Data"),
     renderDataItemTable(),
