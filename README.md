@@ -32,6 +32,32 @@ Warning
 >The ScalablyTyped mapping appears to support pre-version 3 Chart.js mappings for xAxes and yAxes, where a js.Array[ChartXAxe]
 >or js.Array[ChartYAxe] is required. Chart.js versions 3+ require a ChartXAxe or ChartYAxe.
 
+JS Code
+-------
+>The ```Invalid scale configuration for scale: xAxes | yAxes``` error is thrown in the code below:
+```
+function mergeScaleConfig(config, options) {
+  const chartDefaults = overrides[config.type] || {scales: {}};
+  const configScales = options.scales || {};
+  const chartIndexAxis = getIndexAxis(config.type, options);
+  const scales = Object.create(null);
+
+  // First figure out first scale id's per axis.
+  Object.keys(configScales).forEach(id => {
+    const scaleConf = configScales[id];
+    if (!isObject(scaleConf)) {
+      return console.error(`Invalid scale configuration for scale: ${id}`); // Error occurs here!!!
+    }
+    if (scaleConf._proxy) {
+      return console.warn(`Ignoring resolver passed as options for scale: ${id}`);
+    }
+    const axis = determineAxis(id, scaleConf, retrieveAxisFromDatasets(id, config), defaults.scales[scaleConf.type]);
+    const defaultId = getDefaultScaleIDFromAxis(axis, chartIndexAxis);
+    const defaultScaleOptions = chartDefaults.scales || {};
+    scales[id] = mergeIf(Object.create(null), [{axis}, scaleConf, defaultScaleOptions[axis], defaultScaleOptions[defaultId]]);
+  });
+```
+
 Install
 -------
 1. brew install node
