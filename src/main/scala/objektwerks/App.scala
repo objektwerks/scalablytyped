@@ -21,6 +21,7 @@ final case class DataItem(id: Id = Id(),
 val dataItemsVar = Var[List[DataItem]](List(DataItem(Id(), "one", 1.1)))
 val dataItemsSignal = dataItemsVar.signal
 val doubleSignal = dataItemsSignal.map(_.map(_.value))
+
 val chartTypes = List("bar", "line", "pie")
 val chartBus = EventBus[HtmlElement]()
 
