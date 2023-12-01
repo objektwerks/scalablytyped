@@ -21,6 +21,8 @@ final case class DataItem(id: Id = Id(),
 val dataItemsVar = Var[List[DataItem]](List(DataItem(Id(), "one", 1.1)))
 val dataItemsSignal = dataItemsVar.signal
 val doubleSignal = dataItemsSignal.map(_.map(_.value))
+val chartTypes = List("bar", "line", "pie")
+val chartBus = EventBus[HtmlElement]()
 
 def appElement(): HtmlElement =
   div(
@@ -31,7 +33,16 @@ def appElement(): HtmlElement =
       li("Avg - ", child.text <-- doubleSignal.map(doubles => f"${doubles.sum / doubles.size}%2.2f"))
     ),
     h1("Chart"),
-    renderDataItemChart()
+    label("Select chart type: "),
+    select(
+      selected(false),
+      children <-- Var(chartTypes.map(item => option(item))).signal
+    ).amend(
+      onChange.mapToValue --> { value => chartBus.emit( renderDataItemChart(value) ) },
+    ),
+    div(
+      child <-- chartBus.events
+    )
   )
 
 def renderDataItemTable(): HtmlElement =
@@ -91,7 +102,7 @@ def doubleTextInput(doubleSignal: Signal[Double],
     },
   )
 
-def renderDataItemChart(): HtmlElement =
+def renderDataItemChart(typeOfChart: String): HtmlElement =
   import scala.scalajs.js.JSConverters.*
   import typings.chartJs.mod.*
   import registrar.Registrar.{
@@ -103,21 +114,21 @@ def renderDataItemChart(): HtmlElement =
   )
 
   var optionalChart: Option[Chart] = None
+  val chartType = typeOfChart match
+                  case "bar" => ChartType.bar
+                  case "line" => ChartType.line
+                  case "pie" => ChartType.pie
 
   canvasTag(
     width := "100%",
-    height := "500px",
 
     onMountUnmountCallback(
       mount = { mountContext =>
         val canvas = mountContext.thisNode.ref
         val chart = Chart.apply.newInstance2(canvas, new ChartConfiguration {
-          `type` = ChartType.bar
-          // `type` = ChartType.line
-          // `type` = ChartType.pie
+          `type` = chartType
           data = new ChartData {
-            datasets = js.Array(new ChartDataSets {
-            })
+            datasets = js.Array(new ChartDataSets {})
           }
           options = new ChartOptions {
             scales = new ChartScales {
