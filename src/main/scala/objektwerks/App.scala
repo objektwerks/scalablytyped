@@ -115,9 +115,9 @@ def renderDataItemChart(typeOfChart: String): HtmlElement =
 
   var optionalChart: Option[Chart] = None
   val chartType = typeOfChart match
-                  case "bar" => ChartType.bar
-                  case "line" => ChartType.line
-                  case "pie" => ChartType.pie
+                    case "bar" => ChartType.bar
+                    case "line" => ChartType.line
+                    case "pie" => ChartType.pie
 
   canvasTag(
     width := "100%",
