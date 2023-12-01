@@ -35,8 +35,7 @@ def appElement(): HtmlElement =
     h1("Chart"),
     label("Select chart type: "),
     select(
-      selected(false),
-      children <-- Var(chartTypes.map(item => option(item))).signal
+      children <-- Var(chartTypes.map(item => option(selected(false), item))).signal
     ).amend(
       onChange.mapToValue --> { value => chartBus.emit( renderDataItemChart(value) ) },
     ),
