@@ -127,18 +127,16 @@ def renderDataItemChart(typeOfChart: String): HtmlElement =
         val canvas = mountContext.thisNode.ref
         val chart = Chart.apply.newInstance2(canvas, new ChartConfiguration {
           `type` = chartType
-          data = new ChartData {
-            datasets = js.Array(new ChartDataSets {})
-          }
+          data = new ChartData { datasets = js.Array(new ChartDataSets {}) }
           options = new ChartOptions {
             scales = new ChartScales {
-              xAxes = js.Array(new ChartXAxe {
+              xAxes = js.Array(new ChartXAxe { //Fails! See readme!
                 title = new ChartTitleOptions {
                   display = true
                   text = "Time"
                 }
               })
-              yAxes = js.Array(new ChartYAxe {
+              yAxes = js.Array(new ChartYAxe { // Fails! See readme!
                 title = new ChartTitleOptions {
                   display = true
                   text = "Series"
