@@ -71,7 +71,7 @@ def renderDataItem(id: Id,
 
   tr(
     td(labelTextInput(signal.map(_.label), labelTextInputUpdater)),
-    td(doubleTextInput(signal.map(_.value), valueTextInputUpdater)),
+    td(valueTextInput(signal.map(_.value), valueTextInputUpdater)),
     td(button("🗑️", onClick --> (_ => dataItemsVar.update(data => data.filter(_.id != id))))),
   )
 
@@ -85,8 +85,8 @@ def labelTextInput(stringSignal: Signal[String],
     ),
   )
 
-def doubleTextInput(doubleSignal: Signal[Double],
-                    doubleObserver: Observer[Double]): Input =
+def valueTextInput(valueSignal: Signal[Double],
+                   valueObserver: Observer[Double]): Input =
   val stringVar = Var[String]("")
   input(
     typ := "text",
@@ -94,12 +94,12 @@ def doubleTextInput(doubleSignal: Signal[Double],
       value <-- stringVar.signal,
       onInput.mapToValue --> stringVar,
     ),
-    doubleSignal --> stringVar.updater[Double] { (oldDoubleAsString, newDouble) =>
+    valueSignal --> stringVar.updater[Double] { (oldDoubleAsString, newDouble) =>
       if oldDoubleAsString.toDoubleOption.contains(newDouble) then oldDoubleAsString
       else newDouble.toString
     },
     stringVar.signal --> { string =>
-      string.toDoubleOption.foreach(doubleObserver.onNext)
+      string.toDoubleOption.foreach(valueObserver.onNext)
     },
   )
 
