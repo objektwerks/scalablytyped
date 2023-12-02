@@ -121,7 +121,7 @@ def renderDataItemChart(typeOfChart: String): HtmlElement =
                     case "pie" => ChartType.pie
 
   canvasTag(
-    width := "100%",
+    width("100%"),
 
     onMountUnmountCallback(
       mount = { mountContext =>
