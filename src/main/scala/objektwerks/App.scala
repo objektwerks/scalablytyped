@@ -78,7 +78,7 @@ def renderDataItem(id: Id,
 def labelTextInput(labelSignal: Signal[String],
                    labelObserver: Observer[String]): Input =
   input(
-    typ := "text",
+    typ("text"),
     controlled(
       value <-- labelSignal,
       onInput.mapToValue --> labelObserver,
@@ -89,7 +89,7 @@ def valueTextInput(valueSignal: Signal[Double],
                    valueObserver: Observer[Double]): Input =
   val stringVar = Var[String]("")
   input(
-    typ := "text",
+    typ("text"),
     controlled(
       value <-- stringVar.signal,
       onInput.mapToValue --> stringVar,
