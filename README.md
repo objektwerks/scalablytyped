@@ -30,8 +30,10 @@ Warning
 >Support for setting chart x and y axes labels fails with these errors:
 1. Invalid scale configuration for scale: xAxes
 2. Invalid scale configuration for scale: yAxes
->The ScalablyTyped mapping appears to support pre-version 3 Chart.js mappings for xAxes and yAxes, where a js.Array[ChartXAxe]
->or js.Array[ChartYAxe] is required. Chart.js versions 3+ require a ChartXAxe or ChartYAxe.
+>The ScalablyTyped mapping appears to support pre-version 3 Chart.js mappings for xAxes and yAxes, where a
+>js.Array[ChartXAxe] or js.Array[ChartYAxe] is required. Chart.js versions 3+ require a ChartXAxe or ChartYAxe.
+
+>It would appear ScalaJs needs it's own custom chart. :)
 
 JS Code
 -------
