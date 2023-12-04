@@ -33,7 +33,7 @@ Warning
 >The ScalablyTyped mapping appears to support pre-version 3 Chart.js mappings for xAxes and yAxes, where a
 >js.Array[ChartXAxe] or js.Array[ChartYAxe] is required. Chart.js versions 3+ require a ChartXAxe or ChartYAxe.
 
->It would appear ScalaJs needs it's own custom chart. :)
+>It would appear ScalaJs needs it's own custom chart component.
 
 JS Solution
 -----------
