@@ -35,6 +35,32 @@ Warning
 
 >It would appear ScalaJs needs it's own custom chart. :)
 
+JS Solution
+-----------
+```
+  scales: {
+      x: {
+        type: "time",
+        ticks: {
+          autoSkip: true,
+          maxTicksLimit: 20,
+          },
+          display: true,
+          scaleLabel: {
+              display: true,
+              labelString: "Point"
+          }
+      },
+      y: {
+          display: true,
+          scaleLabel: {
+              display: true,
+              labelString: "Value"
+          }
+      }
+  }
+```
+
 JS Code
 -------
 >The ```Invalid scale configuration for scale: xAxes | yAxes``` error is thrown in the code below:
