@@ -27,17 +27,17 @@ Note
 
 Warning
 -------
->Typed support for setting chart x and y axes labels fails with these errors:
+>ScalablyTyped mappings for setting chart x and y axes labels fails with these errors:
 1. Invalid scale configuration for scale: xAxes
 2. Invalid scale configuration for scale: yAxes
->The ScalablyTyped mapping appears to support Chart.js V2 mappings for xAxes and yAxes, where a
+>The ScalablyTyped mapping appears to support Chart.js V2 for xAxes and yAxes, where a
 >js.Array[ChartXAxe] or js.Array[ChartYAxe] is required. Chart.js V3+ require a ChartXAxe or ChartYAxe.
 
 >It would appear ScalaJs needs it's own custom chart component.
 
 JS Solution
 -----------
->Using Chart.js V3+ code:
+>Using Chart.js V3+ json:
 ```
   options: {
     scales: {
