@@ -18,6 +18,7 @@ Note
 >See the code:
 
 * [Weather Gradient View](https://github.com/raquo/laminar-full-stack-demo/blob/master/client/src/main/scala/com/raquo/app/weather/WeatherGradientView.scala#L18-L191)
+* [Weather Gradient Chart](https://github.com/raquo/laminar-full-stack-demo/blob/master/client/src/main/scala/com/raquo/app/weather/WeatherGradientChart.scala)
 * [Chart](https://github.com/raquo/laminar-full-stack-demo/blob/master/client/src/main/scala/vendor/chartjs/Chart.scala)
 
 >To accommodate ***all*** Chart.js registrable components, registrar.Registrar will ***require*** additional work.
