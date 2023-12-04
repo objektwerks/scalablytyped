@@ -27,7 +27,7 @@ Note
 
 Warning
 -------
->Support for setting chart x and y axes labels was added; but fails with these errors:
+>Support for setting chart x and y axes labels fails with these errors:
 1. Invalid scale configuration for scale: xAxes
 2. Invalid scale configuration for scale: yAxes
 >The ScalablyTyped mapping appears to support pre-version 3 Chart.js mappings for xAxes and yAxes, where a js.Array[ChartXAxe]
