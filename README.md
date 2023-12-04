@@ -38,26 +38,29 @@ Warning
 JS Solution
 -----------
 ```
-  scales: {
+  options: {
+    scales: {
       x: {
-        type: "time",
-        ticks: {
-          autoSkip: true,
-          maxTicksLimit: 20,
-          },
+        type: 'time',
+        display: true,
+        title: {
           display: true,
-          scaleLabel: {
-              display: true,
-              labelString: "Point"
-          }
+          text: 'Date'
+        },
+        ticks: {
+          major: {
+            enabled: true
+          },
+        }
       },
       y: {
+        display: true,
+        title: {
           display: true,
-          scaleLabel: {
-              display: true,
-              labelString: "Value"
-          }
+          text: 'value'
+        }
       }
+    }
   }
 ```
 
