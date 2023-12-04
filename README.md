@@ -37,6 +37,7 @@ Warning
 
 JS Solution
 -----------
+>Using Chart.js V3+ code:
 ```
   options: {
     scales: {
