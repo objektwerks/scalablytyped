@@ -72,7 +72,7 @@ ScalaJs Solution
 val xTitle = js.Dynamic.literal(display = true, text = "Date")
 val xMajor = js.Dynamic.literal(endabled = true)
 val xTicks = js.Dynamic.literal(major = xMajor)
-val x = js.Dynamic.literal(type = "time", display = true, title = xTitle)
+val x = js.Dynamic.literal(type = "time", display = true, title = xTitle, ticks = xTicks)
 ```
 
 JS Code
