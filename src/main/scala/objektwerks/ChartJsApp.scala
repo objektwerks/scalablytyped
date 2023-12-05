@@ -106,7 +106,7 @@ def valueTextInput(valueSignal: Signal[Double],
 def renderDataItemChart(typeOfChart: String): HtmlElement =
   import scala.scalajs.js.JSConverters.*
   import typings.chartJs.mod.*
-  import registrar.Registrar.{
+  import registrar.ChartRegistrar.{
     ArcElement, BarController, BarElement, CategoryScale, LinearScale, LineController, LineElement, PieController, PointElement, Chart => ChartJs
   }
 
