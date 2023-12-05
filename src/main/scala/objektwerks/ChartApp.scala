@@ -10,7 +10,14 @@ import scala.util.Random
 /**
  * See: https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example for the original code.
  */
-@main def runChartApp(): Unit = renderOnDomContentLoaded(dom.document.querySelector("#app"), renderApp())
+@main def runChartApp(): Unit =
+  import ChartRegistrar.{
+    ArcElement, BarController, BarElement, CategoryScale, LinearScale, LineController, LineElement, PieController, PointElement, Chart => ChartJs
+  }
+  ChartJs.register(
+    ArcElement, BarController, BarElement, CategoryScale, LinearScale, LineController, LineElement, PieController, PointElement
+  )
+  renderOnDomContentLoaded(dom.document.querySelector("#app"), renderApp())
 
 final class Id
 
@@ -106,13 +113,6 @@ def valueTextInput(valueSignal: Signal[Double],
 def renderDataItemChart(typeOfChart: String): HtmlElement =
   import scala.scalajs.js.JSConverters.*
   import typings.chartJs.mod.*
-  import ChartRegistrar.{
-    ArcElement, BarController, BarElement, CategoryScale, LinearScale, LineController, LineElement, PieController, PointElement, Chart => ChartJs
-  }
-
-  ChartJs.register(
-    ArcElement, BarController, BarElement, CategoryScale, LinearScale, LineController, LineElement, PieController, PointElement
-  )
 
   var optionalChart: Option[Chart] = None
   val chartType = typeOfChart match
