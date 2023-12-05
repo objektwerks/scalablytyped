@@ -69,7 +69,8 @@ ScalaJs Solution
 ----------------
 >WIP!
 ```
-val x = js.Dynamic.literal(type = "time", display = true)
+val xTitle = js.Dynamic.literal(display = true, text = "Date")
+val x = js.Dynamic.literal(type = "time", display = true, title = xTitle)
 ```
 
 JS Code
