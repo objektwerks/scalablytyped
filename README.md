@@ -58,7 +58,7 @@ JS Solution
         display: true,
         title: {
           display: true,
-          text: 'value'
+          text: 'Value'
         }
       }
     }
