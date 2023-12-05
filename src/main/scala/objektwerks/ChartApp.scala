@@ -5,7 +5,6 @@ import com.raquo.laminar.api.L.*
 import org.scalajs.dom
 
 import scala.scalajs.js
-import scala.scalajs.js.Dynamic.literal
 import scala.util.Random
 
 /**
@@ -120,19 +119,6 @@ def renderDataItemChart(typeOfChart: String): HtmlElement =
                     case "bar" => ChartType.bar
                     case "line" => ChartType.line
                     case "pie" => ChartType.pie
-
-  val xAxes = literal(
-    `type` = "time",
-    display = true,
-    title = literal(display = true, text = "Time"),
-    ticks = literal(major = literal(enabled = true))
-  )
-  val yAxes = literal
-    (display = true,
-    title = literal(display = true, text = "Series")
-  )
-  val scales = literal(x = xAxes, y = yAxes)
-  val options = literal(scales = scales)
 
   canvasTag(
     width("100%"),
