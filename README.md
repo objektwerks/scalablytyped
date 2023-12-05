@@ -75,7 +75,7 @@ val xTicks = js.Dynamic.literal(major = xMajor)
 val x = js.Dynamic.literal(type = "time", display = true, title = xTitle, ticks = xTicks)
 
 val yTitle = js.Dynamic.literal(display = true, text = "Value")
-val y = js.Dynamic.literal(display = true)
+val y = js.Dynamic.literal(display = true, title = yTitle)
 ```
 
 JS Code
