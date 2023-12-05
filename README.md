@@ -72,10 +72,13 @@ ScalaJs Solution
 val xTitle = js.Dynamic.literal(display = true, text = "Date")
 val xMajor = js.Dynamic.literal(enabled = true)
 val xTicks = js.Dynamic.literal(major = xMajor)
-val x = js.Dynamic.literal(type = "time", display = true, title = xTitle, ticks = xTicks)
+val xAxes = js.Dynamic.literal(type = "time", display = true, title = xTitle, ticks = xTicks)
 
 val yTitle = js.Dynamic.literal(display = true, text = "Value")
-val y = js.Dynamic.literal(display = true, title = yTitle)
+val yAxes = js.Dynamic.literal(display = true, title = yTitle)
+
+val scales = js.Dynamic.literal(x = xAxes, y = yAxes)
+val options = js.Dynamic.literal(scales = scales)
 ```
 
 JS Code
