@@ -65,6 +65,13 @@ JS Solution
   }
 ```
 
+ScalaJs Solution
+----------------
+>WIP!
+```
+val x = js.Dynamic.literal(type = "time", display = true)
+```
+
 JS Code
 -------
 >The ```Invalid scale configuration for scale: xAxes | yAxes``` error is thrown in the code below:
