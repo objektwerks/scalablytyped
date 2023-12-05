@@ -67,7 +67,7 @@ JS Solution
 
 ScalaJs Solution
 ----------------
->WIP!
+>I attempted to insert this code into the current Chart.js impl - but the typing won't allow it.
 ```
   import scala.scalajs.js.Dynamic.literal
 
