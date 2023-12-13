@@ -4,6 +4,10 @@ ScalablyTyped
 
 >This project is ***inspired*** by: [ScalaJs-Laminar-ChartJS Github](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example)
 
+WARNING
+-------
+>[2023.12.13] sbt clean compile fastLinkJS ***suddenly*** produces **5** Chart.js typing errors.
+
 Install
 -------
 1. brew install node
@@ -23,8 +27,8 @@ Dev
 2. ~ fastLinkJS
 3. npm run dev ( new session )
 
-ChartJs
--------
+Chart.js
+--------
 >Initially, the Chart.js chart ***failed*** to render!
 
 >So I ***opened*** this issue: [Chart Rendering Fails](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example/issues/6)
