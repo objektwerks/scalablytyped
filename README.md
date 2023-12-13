@@ -25,8 +25,8 @@ Note
 
 >Currently, this project supports ChartType.**bar**, ChartType.**line** and ChartType.**pie**.
 
-Warning
--------
+Mappings
+--------
 >ScalablyTyped mappings for setting chart x and y axes labels fails with these errors:
 1. Invalid scale configuration for scale: xAxes
 2. Invalid scale configuration for scale: yAxes
