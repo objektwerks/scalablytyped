@@ -4,6 +4,25 @@ ScalablyTyped
 
 >This project is ***inspired*** by: [ScalaJs-Laminar-ChartJS Github](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example)
 
+Install
+-------
+1. brew install node
+2. npm install
+>See **package.json**.
+
+Build
+-----
+1. npm install ( only when package.json changes )
+2. sbt clean compile fastLinkJS
+>See **target/public** directory.
+
+Dev
+---
+>Edits are reflected in both sessions.
+1. sbt ( new session )
+2. ~ fastLinkJS
+3. npm run dev ( new session )
+
 ChartJs
 -------
 >Initially, the Chart.js chart ***failed*** to render!
@@ -112,25 +131,6 @@ function mergeScaleConfig(config, options) {
     scales[id] = mergeIf(Object.create(null), [{axis}, scaleConf, defaultScaleOptions[axis], defaultScaleOptions[defaultId]]);
   });
 ```
-
-Install
--------
-1. brew install node
-2. npm install
->See **package.json**.
-
-Build
------
-1. npm install ( only when package.json changes )
-2. sbt clean compile fastLinkJS
->See **target/public** directory.
-
-Dev
----
->Edits are reflected in both sessions.
-1. sbt ( new session )
-2. ~ fastLinkJS
-3. npm run dev ( new session )
 
 Package
 -------
