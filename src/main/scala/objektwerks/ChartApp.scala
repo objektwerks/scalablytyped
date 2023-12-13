@@ -53,6 +53,28 @@ def renderApp(): HtmlElement =
     )
   )
 
+/* Alternate view!
+  div(
+    h1("Chart"),
+    label("Select chart type: "),
+    select(
+      option(selected(true), disabled(true), hidden(true), ""),
+      children <-- Var(chartTypes.map(item => option(item))).signal
+    ).amend(
+      onChange.mapToValue --> { value => chartBus.emit( renderDataItemChart(value) ) },
+    ),
+    div(
+      child <-- chartBus.events
+    ),
+    h1("Data"),
+    ul(
+      li("Sum - ", child.text <-- doubleSignal.map(doubles => f"${doubles.sum}%2.2f")),
+      li("Avg - ", child.text <-- doubleSignal.map(doubles => f"${doubles.sum / doubles.size}%2.2f"))
+    ),
+    renderDataItemTable()
+  )
+ */
+
 def renderDataItemTable(): HtmlElement =
   table(
     thead(
