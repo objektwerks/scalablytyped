@@ -12,7 +12,13 @@ Install
 -------
 1. brew install node
 2. npm install
+3. npm install npm-check-updates
 >See **package.json**.
+
+NPM
+---
+>To update package.json dependencies.
+1. ncu
 
 Build
 -----
