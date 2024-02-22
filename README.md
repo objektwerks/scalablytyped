@@ -1,6 +1,6 @@
 ScalablyTyped
 -------------
->ScalaJs app using ScalablyTyped, Chart.js and Scala 3.
+>ScalaJs app using ScalablyTyped, Chart.js, Laminar and Scala 3.
 
 >This project is ***inspired*** by: [ScalaJs-Laminar-ChartJS Github](https://github.com/sjrd/scalajs-sbt-vite-laminar-chartjs-example)
 
