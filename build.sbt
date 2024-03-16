@@ -15,7 +15,7 @@ lazy val scalablytyped = project
         .withModuleSplitStyle(ModuleSplitStyle.SmallModulesFor(List("objektwerks")))
     },
     libraryDependencies ++= Seq(
-      "com.raquo" %%% "laminar" % "17.0.0-M8"
+      "com.raquo" %%% "laminar" % "17.0.0-RC1"
     ),
     externalNpm := baseDirectory.value
   )
