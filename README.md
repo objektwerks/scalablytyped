@@ -9,7 +9,7 @@ WARNING
 >***sbt clean compile fastLinkJS*** produces:
 * [2024.3.28] **multiple** typing errors.
 * [2023.12.13] **5** typing errors.
->ScalaJs really needs a dedicated Chart.js typed library.
+>ScalaJs **needs** a dedicated typed chart library.
 
 Install
 -------
