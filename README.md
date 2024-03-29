@@ -6,7 +6,8 @@ ScalablyTyped
 
 WARNING
 -------
->[2023.12.13] sbt clean compile fastLinkJS ***suddenly*** produces **5** Chart.js typing errors.
+>[2024.3.28] sbt clean compile fastLinkJS hangs and produces a near endless list of errors.
+>[2023.12.13] sbt clean compile fastLinkJS produces **5** Chart.js typing errors.
 
 Install
 -------
