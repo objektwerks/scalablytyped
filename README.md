@@ -6,8 +6,9 @@ ScalablyTyped
 
 WARNING
 -------
->[2024.3.28] sbt clean compile fastLinkJS hangs and produces a near endless list of errors.
->[2023.12.13] sbt clean compile fastLinkJS produces **5** Chart.js typing errors.
+>ScalaJs really needs a dedicated Chartjs typed library.
+* [2024.3.28] sbt clean compile fastLinkJS hangs and produces a near endless list of errors.
+* [2023.12.13] sbt clean compile fastLinkJS produces **5** Chart.js typing errors.
 
 Install
 -------
