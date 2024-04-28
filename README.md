@@ -7,8 +7,7 @@ ScalablyTyped
 WARNING
 -------
 >***sbt clean compile fastLinkJS*** produces:
-* [2024.3.28] **multiple** type errors.
-* [2023.12.13] **5** type errors.
+* [2024.4.28] **5** type errors on typings.chartJs.mod.Chart and typings.chartJs.mod.ChartType, which exist!
 >ScalaJs ***needs*** a dedicated typed chart library.
 
 Install
