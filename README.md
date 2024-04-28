@@ -24,7 +24,7 @@ NPM
 
 Build
 -----
->Increase Sbt opt/homebrew/etc/.sbtopts memory ( -mem 2048 )
+>Increase **opt/homebrew/etc/.sbtopts** memory ( -mem 2048 )
 1. npm install ( only when package.json changes )
 2. sbt clean compile fastLinkJS
 >See **target/public** directory.
