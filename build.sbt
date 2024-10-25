@@ -7,7 +7,7 @@ lazy val scalablytyped = project
     version := "0.5-SNAPSHOT",
     scalaVersion := "3.6.1",
     scalacOptions ++= Seq(
-      "-Wunused:all"
+      "-Wall"
     ),
     scalaJSUseMainModuleInitializer := true,
     scalaJSLinkerConfig ~= {
