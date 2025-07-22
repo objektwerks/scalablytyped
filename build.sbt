@@ -5,7 +5,7 @@ lazy val scalablytyped = project
   .enablePlugins(ScalaJSPlugin, ScalablyTypedConverterExternalNpmPlugin)
   .settings(
     version := "0.5-SNAPSHOT",
-    scalaVersion := "3.7.2-RC1",
+    scalaVersion := "3.7.2-RC2",
     scalacOptions ++= Seq(
       "-Wunused:all"
     ),
